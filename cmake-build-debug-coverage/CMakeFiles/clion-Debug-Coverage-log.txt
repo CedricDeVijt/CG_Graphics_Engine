@@ -1,0 +1,4 @@
+"/Users/cedric/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=/Users/cedric/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/ninja/mac/ninja" "-DCMAKE_CXX_FLAGS=-fprofile-instr-generate -fcoverage-mapping" "-DCMAKE_C_FLAGS=-fprofile-instr-generate -fcoverage-mapping" -G Ninja -S "/Users/cedric/Library/Mobile Documents/com~apple~CloudDocs/School/Informatica 1/2 Computer graphics/Project_Engine_v2" -B "/Users/cedric/Library/Mobile Documents/com~apple~CloudDocs/School/Informatica 1/2 Computer graphics/Project_Engine_v2/cmake-build-debug-coverage"
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/cedric/Library/Mobile Documents/com~apple~CloudDocs/School/Informatica 1/2 Computer graphics/Project_Engine_v2/cmake-build-debug-coverage
