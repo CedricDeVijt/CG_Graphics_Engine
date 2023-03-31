@@ -1,9 +1,6 @@
 # ninja log v5
-1	242	1678828053327353642	CMakeFiles/engine.dir/Line2D.cpp.o	9e010103c1ec248c
 428	465	1678828126911217286	engine	fe0cebef9e7ad65c
-2	47	1678828053129836142	CMakeFiles/engine.dir/Point2D.cpp.o	4ffed77ce56df735
 0	442	1678828053526393596	CMakeFiles/engine.dir/easy_image.cc.o	1589d58dde7c571
 1	749	1678828053834491973	CMakeFiles/engine.dir/l_parser.cc.o	b22a975a7c75f998
-2	428	1678828126872343609	CMakeFiles/engine.dir/LSystem2D.cpp.o	bb4ca7a69160c631
 0	745	1678828053828814684	CMakeFiles/engine.dir/engine.cc.o	a0edd4ddebf03b9c
 0	809	1678828053893544758	CMakeFiles/engine.dir/ini_configuration.cc.o	94a315543744b5cb

@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(engine_v2)
+project(CG_Grapics_Engine)
 
 ############################################################
 # Set compiler flags
@@ -18,7 +18,7 @@ set(engine_sources
 	easy_image.cc
 	engine.cc
 	ini_configuration.cc
-		l_parser.cc l_parser.h 2DLSystem/Line2D.cpp 2DLSystem/Line2D.h 2DLSystem/LineColor.h 2DLSystem/Point2D.cpp 2DLSystem/Point2D.h 2DLSystem/LSystem2D.cpp 2DLSystem/LSystem2D.h)
+		l_parser.cc l_parser.h 2DLSystem/Line2D.cpp 2DLSystem/Line2D.h 2DLSystem/LineColor.h 2DLSystem/Point2D.cpp 2DLSystem/Point2D.h 2DLSystem/LSystem2D.cpp 2DLSystem/LSystem2D.h 3DLinedrawings/Face3D.h 3DLinedrawings/Face3D.cpp 3DLinedrawings/Figure3D.h 3DLinedrawings/Figure3D.cpp 3DLinedrawings/vector3d.h 3DLinedrawings/vector3d.cc 3DLinedrawings/Linedrawing3D.h 3DLinedrawings/Linedrawing3D.cpp)
 
 ############################################################
 # Create an executable

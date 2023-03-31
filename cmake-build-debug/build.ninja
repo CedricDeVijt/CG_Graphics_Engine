@@ -8,7 +8,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: engine_v2
+# Project: CG_Grapics_Engine
 # Configurations: Debug
 # =============================================================================
 
@@ -36,7 +36,7 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = /Users/cedric/Library/Mobile$ Documents/com~apple~CloudDocs/School/Informatica$ 1/2$ Computer$ graphics/Project_Engine_v2/cmake-build-debug/
+cmake_ninja_workdir = /Users/cedric/Library/Mobile$ Documents/com~apple~CloudDocs/School/Informatica$ 1/2$ Computer$ graphics/ComputerGrapics_Engine/cmake-build-debug/
 # =============================================================================
 # Object build statements for EXECUTABLE target engine
 
@@ -46,47 +46,71 @@ cmake_ninja_workdir = /Users/cedric/Library/Mobile$ Documents/com~apple~CloudDoc
 
 build cmake_object_order_depends_target_engine: phony || CMakeFiles/engine.dir
 
-build CMakeFiles/engine.dir/easy_image.cc.o: CXX_COMPILER__engine_Debug /Users/cedric/Library/Mobile$ Documents/com~apple~CloudDocs/School/Informatica$ 1/2$ Computer$ graphics/Project_Engine_v2/easy_image.cc || cmake_object_order_depends_target_engine
+build CMakeFiles/engine.dir/easy_image.cc.o: CXX_COMPILER__engine_Debug /Users/cedric/Library/Mobile$ Documents/com~apple~CloudDocs/School/Informatica$ 1/2$ Computer$ graphics/ComputerGrapics_Engine/easy_image.cc || cmake_object_order_depends_target_engine
   DEP_FILE = CMakeFiles/engine.dir/easy_image.cc.o.d
-  FLAGS = -std=c++14 -g -std=c++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -fcolor-diagnostics
+  FLAGS = -std=c++14 -g -std=c++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/engine.dir
   OBJECT_FILE_DIR = CMakeFiles/engine.dir
 
-build CMakeFiles/engine.dir/engine.cc.o: CXX_COMPILER__engine_Debug /Users/cedric/Library/Mobile$ Documents/com~apple~CloudDocs/School/Informatica$ 1/2$ Computer$ graphics/Project_Engine_v2/engine.cc || cmake_object_order_depends_target_engine
+build CMakeFiles/engine.dir/engine.cc.o: CXX_COMPILER__engine_Debug /Users/cedric/Library/Mobile$ Documents/com~apple~CloudDocs/School/Informatica$ 1/2$ Computer$ graphics/ComputerGrapics_Engine/engine.cc || cmake_object_order_depends_target_engine
   DEP_FILE = CMakeFiles/engine.dir/engine.cc.o.d
-  FLAGS = -std=c++14 -g -std=c++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -fcolor-diagnostics
+  FLAGS = -std=c++14 -g -std=c++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/engine.dir
   OBJECT_FILE_DIR = CMakeFiles/engine.dir
 
-build CMakeFiles/engine.dir/ini_configuration.cc.o: CXX_COMPILER__engine_Debug /Users/cedric/Library/Mobile$ Documents/com~apple~CloudDocs/School/Informatica$ 1/2$ Computer$ graphics/Project_Engine_v2/ini_configuration.cc || cmake_object_order_depends_target_engine
+build CMakeFiles/engine.dir/ini_configuration.cc.o: CXX_COMPILER__engine_Debug /Users/cedric/Library/Mobile$ Documents/com~apple~CloudDocs/School/Informatica$ 1/2$ Computer$ graphics/ComputerGrapics_Engine/ini_configuration.cc || cmake_object_order_depends_target_engine
   DEP_FILE = CMakeFiles/engine.dir/ini_configuration.cc.o.d
-  FLAGS = -std=c++14 -g -std=c++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -fcolor-diagnostics
+  FLAGS = -std=c++14 -g -std=c++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/engine.dir
   OBJECT_FILE_DIR = CMakeFiles/engine.dir
 
-build CMakeFiles/engine.dir/l_parser.cc.o: CXX_COMPILER__engine_Debug /Users/cedric/Library/Mobile$ Documents/com~apple~CloudDocs/School/Informatica$ 1/2$ Computer$ graphics/Project_Engine_v2/l_parser.cc || cmake_object_order_depends_target_engine
+build CMakeFiles/engine.dir/l_parser.cc.o: CXX_COMPILER__engine_Debug /Users/cedric/Library/Mobile$ Documents/com~apple~CloudDocs/School/Informatica$ 1/2$ Computer$ graphics/ComputerGrapics_Engine/l_parser.cc || cmake_object_order_depends_target_engine
   DEP_FILE = CMakeFiles/engine.dir/l_parser.cc.o.d
-  FLAGS = -std=c++14 -g -std=c++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -fcolor-diagnostics
+  FLAGS = -std=c++14 -g -std=c++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/engine.dir
   OBJECT_FILE_DIR = CMakeFiles/engine.dir
 
-build CMakeFiles/engine.dir/2DLSystem/Line2D.cpp.o: CXX_COMPILER__engine_Debug /Users/cedric/Library/Mobile$ Documents/com~apple~CloudDocs/School/Informatica$ 1/2$ Computer$ graphics/Project_Engine_v2/2DLSystem/Line2D.cpp || cmake_object_order_depends_target_engine
+build CMakeFiles/engine.dir/2DLSystem/Line2D.cpp.o: CXX_COMPILER__engine_Debug /Users/cedric/Library/Mobile$ Documents/com~apple~CloudDocs/School/Informatica$ 1/2$ Computer$ graphics/ComputerGrapics_Engine/2DLSystem/Line2D.cpp || cmake_object_order_depends_target_engine
   DEP_FILE = CMakeFiles/engine.dir/2DLSystem/Line2D.cpp.o.d
-  FLAGS = -std=c++14 -g -std=c++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -fcolor-diagnostics
+  FLAGS = -std=c++14 -g -std=c++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/engine.dir
   OBJECT_FILE_DIR = CMakeFiles/engine.dir/2DLSystem
 
-build CMakeFiles/engine.dir/2DLSystem/Point2D.cpp.o: CXX_COMPILER__engine_Debug /Users/cedric/Library/Mobile$ Documents/com~apple~CloudDocs/School/Informatica$ 1/2$ Computer$ graphics/Project_Engine_v2/2DLSystem/Point2D.cpp || cmake_object_order_depends_target_engine
+build CMakeFiles/engine.dir/2DLSystem/Point2D.cpp.o: CXX_COMPILER__engine_Debug /Users/cedric/Library/Mobile$ Documents/com~apple~CloudDocs/School/Informatica$ 1/2$ Computer$ graphics/ComputerGrapics_Engine/2DLSystem/Point2D.cpp || cmake_object_order_depends_target_engine
   DEP_FILE = CMakeFiles/engine.dir/2DLSystem/Point2D.cpp.o.d
-  FLAGS = -std=c++14 -g -std=c++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -fcolor-diagnostics
+  FLAGS = -std=c++14 -g -std=c++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/engine.dir
   OBJECT_FILE_DIR = CMakeFiles/engine.dir/2DLSystem
 
-build CMakeFiles/engine.dir/2DLSystem/LSystem2D.cpp.o: CXX_COMPILER__engine_Debug /Users/cedric/Library/Mobile$ Documents/com~apple~CloudDocs/School/Informatica$ 1/2$ Computer$ graphics/Project_Engine_v2/2DLSystem/LSystem2D.cpp || cmake_object_order_depends_target_engine
+build CMakeFiles/engine.dir/2DLSystem/LSystem2D.cpp.o: CXX_COMPILER__engine_Debug /Users/cedric/Library/Mobile$ Documents/com~apple~CloudDocs/School/Informatica$ 1/2$ Computer$ graphics/ComputerGrapics_Engine/2DLSystem/LSystem2D.cpp || cmake_object_order_depends_target_engine
   DEP_FILE = CMakeFiles/engine.dir/2DLSystem/LSystem2D.cpp.o.d
-  FLAGS = -std=c++14 -g -std=c++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -fcolor-diagnostics
+  FLAGS = -std=c++14 -g -std=c++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/engine.dir
   OBJECT_FILE_DIR = CMakeFiles/engine.dir/2DLSystem
+
+build CMakeFiles/engine.dir/3DLinedrawings/Face3D.cpp.o: CXX_COMPILER__engine_Debug /Users/cedric/Library/Mobile$ Documents/com~apple~CloudDocs/School/Informatica$ 1/2$ Computer$ graphics/ComputerGrapics_Engine/3DLinedrawings/Face3D.cpp || cmake_object_order_depends_target_engine
+  DEP_FILE = CMakeFiles/engine.dir/3DLinedrawings/Face3D.cpp.o.d
+  FLAGS = -std=c++14 -g -std=c++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/engine.dir
+  OBJECT_FILE_DIR = CMakeFiles/engine.dir/3DLinedrawings
+
+build CMakeFiles/engine.dir/3DLinedrawings/Figure3D.cpp.o: CXX_COMPILER__engine_Debug /Users/cedric/Library/Mobile$ Documents/com~apple~CloudDocs/School/Informatica$ 1/2$ Computer$ graphics/ComputerGrapics_Engine/3DLinedrawings/Figure3D.cpp || cmake_object_order_depends_target_engine
+  DEP_FILE = CMakeFiles/engine.dir/3DLinedrawings/Figure3D.cpp.o.d
+  FLAGS = -std=c++14 -g -std=c++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/engine.dir
+  OBJECT_FILE_DIR = CMakeFiles/engine.dir/3DLinedrawings
+
+build CMakeFiles/engine.dir/3DLinedrawings/vector3d.cc.o: CXX_COMPILER__engine_Debug /Users/cedric/Library/Mobile$ Documents/com~apple~CloudDocs/School/Informatica$ 1/2$ Computer$ graphics/ComputerGrapics_Engine/3DLinedrawings/vector3d.cc || cmake_object_order_depends_target_engine
+  DEP_FILE = CMakeFiles/engine.dir/3DLinedrawings/vector3d.cc.o.d
+  FLAGS = -std=c++14 -g -std=c++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/engine.dir
+  OBJECT_FILE_DIR = CMakeFiles/engine.dir/3DLinedrawings
+
+build CMakeFiles/engine.dir/3DLinedrawings/Linedrawing3D.cpp.o: CXX_COMPILER__engine_Debug /Users/cedric/Library/Mobile$ Documents/com~apple~CloudDocs/School/Informatica$ 1/2$ Computer$ graphics/ComputerGrapics_Engine/3DLinedrawings/Linedrawing3D.cpp || cmake_object_order_depends_target_engine
+  DEP_FILE = CMakeFiles/engine.dir/3DLinedrawings/Linedrawing3D.cpp.o.d
+  FLAGS = -std=c++14 -g -std=c++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/engine.dir
+  OBJECT_FILE_DIR = CMakeFiles/engine.dir/3DLinedrawings
 
 
 # =============================================================================
@@ -96,8 +120,8 @@ build CMakeFiles/engine.dir/2DLSystem/LSystem2D.cpp.o: CXX_COMPILER__engine_Debu
 #############################################
 # Link the executable engine
 
-build engine: CXX_EXECUTABLE_LINKER__engine_Debug CMakeFiles/engine.dir/easy_image.cc.o CMakeFiles/engine.dir/engine.cc.o CMakeFiles/engine.dir/ini_configuration.cc.o CMakeFiles/engine.dir/l_parser.cc.o CMakeFiles/engine.dir/2DLSystem/Line2D.cpp.o CMakeFiles/engine.dir/2DLSystem/Point2D.cpp.o CMakeFiles/engine.dir/2DLSystem/LSystem2D.cpp.o
-  FLAGS = -std=c++14 -g -std=c++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk
+build engine: CXX_EXECUTABLE_LINKER__engine_Debug CMakeFiles/engine.dir/easy_image.cc.o CMakeFiles/engine.dir/engine.cc.o CMakeFiles/engine.dir/ini_configuration.cc.o CMakeFiles/engine.dir/l_parser.cc.o CMakeFiles/engine.dir/2DLSystem/Line2D.cpp.o CMakeFiles/engine.dir/2DLSystem/Point2D.cpp.o CMakeFiles/engine.dir/2DLSystem/LSystem2D.cpp.o CMakeFiles/engine.dir/3DLinedrawings/Face3D.cpp.o CMakeFiles/engine.dir/3DLinedrawings/Figure3D.cpp.o CMakeFiles/engine.dir/3DLinedrawings/vector3d.cc.o CMakeFiles/engine.dir/3DLinedrawings/Linedrawing3D.cpp.o
+  FLAGS = -std=c++14 -g -std=c++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/engine.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -109,7 +133,7 @@ build engine: CXX_EXECUTABLE_LINKER__engine_Debug CMakeFiles/engine.dir/easy_ima
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd "/Users/cedric/Library/Mobile Documents/com~apple~CloudDocs/School/Informatica 1/2 Computer graphics/Project_Engine_v2/cmake-build-debug" && "/Users/cedric/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cd "/Users/cedric/Library/Mobile Documents/com~apple~CloudDocs/School/Informatica 1/2 Computer graphics/ComputerGrapics_Engine/cmake-build-debug" && "/Users/cedric/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -120,7 +144,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd "/Users/cedric/Library/Mobile Documents/com~apple~CloudDocs/School/Informatica 1/2 Computer graphics/Project_Engine_v2/cmake-build-debug" && "/Users/cedric/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/bin/cmake" --regenerate-during-build -S"/Users/cedric/Library/Mobile Documents/com~apple~CloudDocs/School/Informatica 1/2 Computer graphics/Project_Engine_v2" -B"/Users/cedric/Library/Mobile Documents/com~apple~CloudDocs/School/Informatica 1/2 Computer graphics/Project_Engine_v2/cmake-build-debug"
+  COMMAND = cd "/Users/cedric/Library/Mobile Documents/com~apple~CloudDocs/School/Informatica 1/2 Computer graphics/ComputerGrapics_Engine/cmake-build-debug" && "/Users/cedric/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/bin/cmake" --regenerate-during-build -S"/Users/cedric/Library/Mobile Documents/com~apple~CloudDocs/School/Informatica 1/2 Computer graphics/ComputerGrapics_Engine" -B"/Users/cedric/Library/Mobile Documents/com~apple~CloudDocs/School/Informatica 1/2 Computer graphics/ComputerGrapics_Engine/cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -138,7 +162,7 @@ build list_install_components: phony
 # Utility command for install
 
 build CMakeFiles/install.util: CUSTOM_COMMAND all
-  COMMAND = cd "/Users/cedric/Library/Mobile Documents/com~apple~CloudDocs/School/Informatica 1/2 Computer graphics/Project_Engine_v2/cmake-build-debug" && "/Users/cedric/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/bin/cmake" -P cmake_install.cmake
+  COMMAND = cd "/Users/cedric/Library/Mobile Documents/com~apple~CloudDocs/School/Informatica 1/2 Computer graphics/ComputerGrapics_Engine/cmake-build-debug" && "/Users/cedric/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/bin/cmake" -P cmake_install.cmake
   DESC = Install the project...
   pool = console
   restat = 1
@@ -150,7 +174,7 @@ build install: phony CMakeFiles/install.util
 # Utility command for install/local
 
 build CMakeFiles/install/local.util: CUSTOM_COMMAND all
-  COMMAND = cd "/Users/cedric/Library/Mobile Documents/com~apple~CloudDocs/School/Informatica 1/2 Computer graphics/Project_Engine_v2/cmake-build-debug" && "/Users/cedric/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  COMMAND = cd "/Users/cedric/Library/Mobile Documents/com~apple~CloudDocs/School/Informatica 1/2 Computer graphics/ComputerGrapics_Engine/cmake-build-debug" && "/Users/cedric/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
   DESC = Installing only the local directory...
   pool = console
   restat = 1
@@ -162,7 +186,7 @@ build install/local: phony CMakeFiles/install/local.util
 # Utility command for install/strip
 
 build CMakeFiles/install/strip.util: CUSTOM_COMMAND all
-  COMMAND = cd "/Users/cedric/Library/Mobile Documents/com~apple~CloudDocs/School/Informatica 1/2 Computer graphics/Project_Engine_v2/cmake-build-debug" && "/Users/cedric/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  COMMAND = cd "/Users/cedric/Library/Mobile Documents/com~apple~CloudDocs/School/Informatica 1/2 Computer graphics/ComputerGrapics_Engine/cmake-build-debug" && "/Users/cedric/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
   DESC = Installing the project stripped...
   pool = console
   restat = 1
@@ -178,7 +202,7 @@ build install/strip: phony CMakeFiles/install/strip.util
 # =============================================================================
 
 #############################################
-# Folder: /Users/cedric/Library/Mobile Documents/com~apple~CloudDocs/School/Informatica 1/2 Computer graphics/Project_Engine_v2/cmake-build-debug
+# Folder: /Users/cedric/Library/Mobile Documents/com~apple~CloudDocs/School/Informatica 1/2 Computer graphics/ComputerGrapics_Engine/cmake-build-debug
 
 build all: phony engine
 
@@ -189,14 +213,14 @@ build all: phony engine
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeCInformation.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeCXXInformation.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeCommonLanguageInclude.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeGenericSystem.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeInitializeConfigs.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeLanguageInformation.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeSystemSpecificInformation.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeSystemSpecificInitialize.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/AppleClang-C.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/AppleClang-CXX.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/Clang.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/GNU.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-AppleClang-C.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-AppleClang-CXX.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-Clang-C.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-Clang-CXX.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-Clang.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Darwin-Initialize.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Darwin.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/UnixPaths.cmake /Users/cedric/Library/Mobile$ Documents/com~apple~CloudDocs/School/Informatica$ 1/2$ Computer$ graphics/Project_Engine_v2/CMakeLists.txt CMakeCache.txt CMakeFiles/3.24.2/CMakeCCompiler.cmake CMakeFiles/3.24.2/CMakeCXXCompiler.cmake CMakeFiles/3.24.2/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeCInformation.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeCXXInformation.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeCommonLanguageInclude.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeGenericSystem.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeInitializeConfigs.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeLanguageInformation.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeSystemSpecificInformation.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeSystemSpecificInitialize.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/AppleClang-C.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/AppleClang-CXX.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/Clang.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/GNU.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-AppleClang-C.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-AppleClang-CXX.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-Clang-C.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-Clang-CXX.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-Clang.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Darwin-Initialize.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Darwin.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/UnixPaths.cmake /Users/cedric/Library/Mobile$ Documents/com~apple~CloudDocs/School/Informatica$ 1/2$ Computer$ graphics/ComputerGrapics_Engine/CMakeLists.txt CMakeCache.txt CMakeFiles/3.24.2/CMakeCCompiler.cmake CMakeFiles/3.24.2/CMakeCXXCompiler.cmake CMakeFiles/3.24.2/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeCInformation.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeCXXInformation.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeCommonLanguageInclude.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeGenericSystem.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeInitializeConfigs.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeLanguageInformation.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeSystemSpecificInformation.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeSystemSpecificInitialize.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/AppleClang-C.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/AppleClang-CXX.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/Clang.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/GNU.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-AppleClang-C.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-AppleClang-CXX.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-Clang-C.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-Clang-CXX.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-Clang.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Darwin-Initialize.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Darwin.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/UnixPaths.cmake /Users/cedric/Library/Mobile$ Documents/com~apple~CloudDocs/School/Informatica$ 1/2$ Computer$ graphics/Project_Engine_v2/CMakeLists.txt CMakeCache.txt CMakeFiles/3.24.2/CMakeCCompiler.cmake CMakeFiles/3.24.2/CMakeCXXCompiler.cmake CMakeFiles/3.24.2/CMakeSystem.cmake: phony
+build /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeCInformation.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeCXXInformation.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeCommonLanguageInclude.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeGenericSystem.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeInitializeConfigs.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeLanguageInformation.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeSystemSpecificInformation.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeSystemSpecificInitialize.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/AppleClang-C.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/AppleClang-CXX.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/Clang.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/GNU.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-AppleClang-C.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-AppleClang-CXX.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-Clang-C.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-Clang-CXX.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-Clang.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Darwin-Initialize.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Darwin.cmake /Users/cedric/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/UnixPaths.cmake /Users/cedric/Library/Mobile$ Documents/com~apple~CloudDocs/School/Informatica$ 1/2$ Computer$ graphics/ComputerGrapics_Engine/CMakeLists.txt CMakeCache.txt CMakeFiles/3.24.2/CMakeCCompiler.cmake CMakeFiles/3.24.2/CMakeCXXCompiler.cmake CMakeFiles/3.24.2/CMakeSystem.cmake: phony
 
 
 #############################################

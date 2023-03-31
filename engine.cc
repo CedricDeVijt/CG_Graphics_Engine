@@ -1,6 +1,8 @@
 #include "easy_image.h"
 #include "ini_configuration.h"
 #include "2DLSystem/LSystem2D.h"
+#include "3DLinedrawings/Linedrawing3D.h"
+#include "3DLinedrawings/Figure3D.h"
 
 #include <fstream>
 #include <iostream>
@@ -19,9 +21,23 @@ img::EasyImage generate_image(const ini::Configuration &configuration)
         std::string inputfile = configuration["2DLSystem"]["inputfile"].as_string_or_die();
         std::vector<double> color = configuration["2DLSystem"]["color"].as_double_tuple_or_die();
 
+        // Create 2DL-system
         LSystem2D system(size, backgroundcolor, inputfile, color);
 
+        // return image from 2DL-System
         return system.getImage();
+
+    } else if (type == "Wireframe"){
+        // 3DL-system is line drawing
+        if (configuration["Figure0"]["type"].as_string_or_die() =="LineDrawing"){
+            auto system = Linedrawing3D(configuration);
+            return system.getImage();
+        }
+        // 3DL-system consists of bodies
+        else {
+            // 3D bodies
+            return {};
+        }
     }
 	return {};
 }
