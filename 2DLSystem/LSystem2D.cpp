@@ -127,7 +127,7 @@ std::vector<int> LSystem2D::getImageSize(int size) {
     x_min = systemLines.begin()->pointA.x;
     y_min = systemLines.begin()->pointA.y;
 
-    for (Line2D line : systemLines){
+    for (const Line2D& line : systemLines){
         // x_max
         x_max = std::max(line.pointA.x, x_max);
         x_max = std::max(line.pointB.x, x_max);
@@ -182,7 +182,7 @@ void LSystem2D::transform2DLines(){
     }
 }
 
-void LSystem2D::draw2DLines(img::Color lineColor) {
+void LSystem2D::draw2DLines(const img::Color& lineColor) {
     // draw all lines in line list
     for (Line2D const& line : systemLines){
         image.draw_line(lround(line.pointA.x), lround(line.pointA.y), lround(line.pointB.x), lround(line.pointB.y), lineColor);

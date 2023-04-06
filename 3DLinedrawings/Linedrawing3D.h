@@ -4,6 +4,10 @@
 
 #include "../ini_configuration.h"
 #include "../easy_image.h"
+#include "vector3d.h"
+#include "Figure3D.h"
+#include "../TransformationMatrix.h"
+#include "../2DLSystem/Line2D.h"
 
 class Linedrawing3D {
 public:
@@ -14,6 +18,21 @@ public:
 
 private:
     img::EasyImage image;
+
+    double x_max;
+    double y_max;
+    double x_min;
+    double y_min;
+
+    static Lines2D doProjection(const Figures3D &figure);
+    static Point2D doProjection(const Vector3D &point, const double d);
+
+
+    std::vector<int> getImageSize(Lines2D lines, int size);
+
+    void draw2DLines(Lines2D lines);
+
+    void scale2DLines(Lines2D &lines, const std::vector<int> imageSize) const;
 };
 
 

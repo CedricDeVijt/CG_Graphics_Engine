@@ -29,7 +29,7 @@ img::EasyImage generate_image(const ini::Configuration &configuration)
 
     } else if (type == "Wireframe"){
         // 3DL-system is line drawing
-        if (configuration["Figure0"]["type"].as_string_or_die() =="LineDrawing"){
+        if (configuration["Figure0"]["type"].as_string_or_die() == "LineDrawing"){
             auto system = Linedrawing3D(configuration);
             return system.getImage();
         }

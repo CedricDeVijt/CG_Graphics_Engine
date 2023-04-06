@@ -11,20 +11,37 @@
 
 class Figure3D {
 public:
-    Figure3D(ini::Section figure);
+    // Constructor
+    explicit Figure3D(const ini::Section& figure);
+
+    const img::Color &getColor() const;
+
+    // Setters
+    void applyTransformation(Vector3D eye);
+
+    std::vector<Face3D> faces;
+    std::vector<Vector3D> points;
 
 private:
+
     std::string type;
     int rotateX;
     int rotateY;
     int rotateZ;
-    int scale;
+    double scale;
+    Vector3D center;
 
-    std::vector<int> center;
+    int nrPoints{};
 
-    std::vector<Vector3D> points;
-    std::vector<Face3D> faces;
+    int nrLines{};
+
     img::Color color;
+
+    // Getters
+    void getSection(const ini::Section &figure);
+    void getPoints(const ini::Section &figure);
+    void getFaces(const ini::Section &figure);
+
 };
 
 typedef std::list<Figure3D> Figures3D;

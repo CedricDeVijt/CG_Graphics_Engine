@@ -36,7 +36,7 @@ private:
 
     // other
     void transform2DLines();
-    void draw2DLines(img::Color lineColor);
+    void draw2DLines(const img::Color& lineColor);
 
 };
 
