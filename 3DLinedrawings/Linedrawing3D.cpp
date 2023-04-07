@@ -31,6 +31,7 @@ Linedrawing3D::Linedrawing3D(const ini::Configuration &configuration) {
     std::vector<int> imageSize = getImageSize(lines, size);
 
     // Scale lines
+    // TODO scale factor doorgeven
     scale2DLines(lines, imageSize);
 
     // Make image
@@ -129,8 +130,8 @@ void Linedrawing3D::scale2DLines(Lines2D &lines, const std::vector<int> imageSiz
     }
 
     // move all lines
-    double DCx = (0.95 * (x_min + x_max)) / 2;
-    double DCy = (0.95 * (y_min + y_max)) / 2;
+    double DCx = (scalingFactor * (x_min + x_max)) / 2;
+    double DCy = (scalingFactor * (y_min + y_max)) / 2;
 
     double dx = (imageSize[0] / 2) - DCx;
     double dy = (imageSize[1] / 2) - DCy;

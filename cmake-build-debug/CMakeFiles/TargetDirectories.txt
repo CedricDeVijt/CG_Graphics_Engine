@@ -1,7 +1,7 @@
-/Users/cedric/Library/Mobile Documents/com~apple~CloudDocs/School/Informatica 1/2 Computer graphics/ComputerGrapics_Engine/cmake-build-debug/CMakeFiles/engine.dir
-/Users/cedric/Library/Mobile Documents/com~apple~CloudDocs/School/Informatica 1/2 Computer graphics/ComputerGrapics_Engine/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/cedric/Library/Mobile Documents/com~apple~CloudDocs/School/Informatica 1/2 Computer graphics/ComputerGrapics_Engine/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/cedric/Library/Mobile Documents/com~apple~CloudDocs/School/Informatica 1/2 Computer graphics/ComputerGrapics_Engine/cmake-build-debug/CMakeFiles/list_install_components.dir
-/Users/cedric/Library/Mobile Documents/com~apple~CloudDocs/School/Informatica 1/2 Computer graphics/ComputerGrapics_Engine/cmake-build-debug/CMakeFiles/install.dir
-/Users/cedric/Library/Mobile Documents/com~apple~CloudDocs/School/Informatica 1/2 Computer graphics/ComputerGrapics_Engine/cmake-build-debug/CMakeFiles/install/local.dir
-/Users/cedric/Library/Mobile Documents/com~apple~CloudDocs/School/Informatica 1/2 Computer graphics/ComputerGrapics_Engine/cmake-build-debug/CMakeFiles/install/strip.dir
+/Users/cedric/Library/Mobile Documents/com~apple~CloudDocs/School/Informatica 1/2 Computer graphics/CG_Graphics_Engine/cmake-build-debug/CMakeFiles/engine.dir
+/Users/cedric/Library/Mobile Documents/com~apple~CloudDocs/School/Informatica 1/2 Computer graphics/CG_Graphics_Engine/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/cedric/Library/Mobile Documents/com~apple~CloudDocs/School/Informatica 1/2 Computer graphics/CG_Graphics_Engine/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/cedric/Library/Mobile Documents/com~apple~CloudDocs/School/Informatica 1/2 Computer graphics/CG_Graphics_Engine/cmake-build-debug/CMakeFiles/list_install_components.dir
+/Users/cedric/Library/Mobile Documents/com~apple~CloudDocs/School/Informatica 1/2 Computer graphics/CG_Graphics_Engine/cmake-build-debug/CMakeFiles/install.dir
+/Users/cedric/Library/Mobile Documents/com~apple~CloudDocs/School/Informatica 1/2 Computer graphics/CG_Graphics_Engine/cmake-build-debug/CMakeFiles/install/local.dir
+/Users/cedric/Library/Mobile Documents/com~apple~CloudDocs/School/Informatica 1/2 Computer graphics/CG_Graphics_Engine/cmake-build-debug/CMakeFiles/install/strip.dir
