@@ -33,6 +33,8 @@ private:
     void draw2DLines(Lines2D lines);
 
     void scale2DLines(Lines2D &lines, const std::vector<int> imageSize) const;
+
+    Lines2D doProjection(const Figure3D &figure);
 };
 
 

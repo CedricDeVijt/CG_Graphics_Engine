@@ -12,28 +12,26 @@ Linedrawing3D::Linedrawing3D(const ini::Configuration &configuration) {
 
     // Get all figures from configuration
     Figures3D figuresList;
+    Lines2D lines;
     for (int i = 0; i < nrFigures; i++) {
         // Create new figure form data
         std::string figureName = "Figure" + std::to_string(i);
-        auto newFigure  = Figure3D(configuration[figureName]);
+        auto newFigure = Figure3D(configuration[figureName]);
 
         // Apply transformations to all figures (rotations, translation, scaling and eye point transformation)
         newFigure.applyTransformation(eye);
 
         // Add figure to list
         figuresList.push_back(newFigure);
-
-        // TODO do projection figure by figure then scale lines, add lines to list
     }
 
     // Project lines of all figures
-    Lines2D lines = doProjection(figuresList);
+    lines = doProjection(figuresList);
 
     // Calculate size image
     std::vector<int> imageSize = getImageSize(lines, size);
 
     // Scale lines
-    // TODO scale factor doorgeven
     scale2DLines(lines, imageSize);
 
     // Make image
@@ -62,6 +60,24 @@ Lines2D Linedrawing3D::doProjection(const Figures3D &figures) {
             lines.emplace_back(point1, point2, figure.getColor());
         }
     }
+    return lines;
+}
+
+Lines2D Linedrawing3D::doProjection(const Figure3D &figure) {
+    Lines2D lines;
+
+    std::vector<Face3D> faces = figure.faces;
+    std::vector<Vector3D> points = figure.points;
+
+    for (auto face : faces){
+        auto point_indexes = face.point_indexes;
+
+        Point2D point1 = doProjection(points[point_indexes[0]], 1);
+        Point2D point2 = doProjection(points[point_indexes[1]], 1);
+
+        lines.emplace_back(point1, point2, figure.getColor());
+        }
+
     return lines;
 }
 

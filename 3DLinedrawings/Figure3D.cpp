@@ -34,7 +34,7 @@ void Figure3D::getPoints(const ini::Section &figure) {
     for (int i = 0; i < nrPoints; i++) {
         std::string pointName = "point" + std::to_string(i);
         auto figurePoint = figure[pointName].as_double_tuple_or_die();
-        auto newPoint  = Vector3D::point(figurePoint[0], figurePoint[1], figurePoint[2]);
+        auto newPoint  = Vector3D::point(figurePoint[0]*scale, figurePoint[1]*scale, figurePoint[2]*scale);
         points.emplace_back(newPoint);
     }
 }
