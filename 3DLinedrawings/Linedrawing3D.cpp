@@ -22,6 +22,8 @@ Linedrawing3D::Linedrawing3D(const ini::Configuration &configuration) {
 
         // Add figure to list
         figuresList.push_back(newFigure);
+
+        // TODO do projection figure by figure then scale lines, add lines to list
     }
 
     // Project lines of all figures

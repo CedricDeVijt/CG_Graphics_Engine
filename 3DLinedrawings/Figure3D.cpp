@@ -27,8 +27,7 @@ void Figure3D::getSection(const ini::Section &figure) {
     nrLines = figure["nrLines"].as_int_or_die();
 
     std::vector<double> figureColor = figure["color"].as_double_tuple_or_die();
-//    color = img::Color(figureColor[0]*255, figureColor[1]*255, figureColor[2]*255);
-    color = img::Color(255, 0, 0);
+    color = img::Color(figureColor[0]*255, figureColor[1]*255, figureColor[2]*255);
 }
 
 void Figure3D::getPoints(const ini::Section &figure) {
