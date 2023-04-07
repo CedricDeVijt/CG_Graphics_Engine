@@ -13,4 +13,3 @@
 - [ ] 3D Lijntekeningen (1 punt)
 ### Known errors
 - line_drawings027.ini werkt nog niet
-
