@@ -10,6 +10,6 @@
 
 ## 3D Lijntekening
 ### Parts
-- [ ] 3D Lijntekeningen (1 punt)
+- [x] 3D Lijntekeningen (1 punt)
 ### Known errors
 - line_drawings027.ini werkt nog niet
