@@ -12,8 +12,10 @@
 class Figure3D {
 public:
     // Constructor
-    explicit Figure3D(const ini::Section& figure);
+    Figure3D(const std::vector<Face3D> &faces, const std::vector<Vector3D> &points, std::vector<int> rotations, double scale,
+             Vector3D center, img::Color color);
 
+    // Getters
     const img::Color &getColor() const;
 
     // Setters
@@ -31,16 +33,7 @@ private:
     double scale;
     Vector3D center;
 
-    int nrPoints{};
-
-    int nrLines{};
-
     img::Color color;
-
-    // Getters
-    void getSection(const ini::Section &figure);
-    void getPoints(const ini::Section &figure);
-    void getFaces(const ini::Section &figure);
 
 };
 

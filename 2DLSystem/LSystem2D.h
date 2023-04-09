@@ -5,7 +5,7 @@
 #include <vector>
 #include "../easy_image.h"
 #include "../l_parser.h"
-#include "Line2D.h"
+#include "../objects/Line2D.h"
 
 
 class LSystem2D {

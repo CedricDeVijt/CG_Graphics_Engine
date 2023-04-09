@@ -2,7 +2,7 @@
 #include "ini_configuration.h"
 #include "2DLSystem/LSystem2D.h"
 #include "3DLinedrawings/Linedrawing3D.h"
-#include "3DLinedrawings/Figure3D.h"
+#include "objects/Figure3D.h"
 
 #include <fstream>
 #include <iostream>

@@ -1,6 +1,7 @@
 #include "Linedrawing3D.h"
-#include "Figure3D.h"
-#include "../TransformationMatrix.h"
+#include "../objects/Figure3D.h"
+#include "../objects/TransformationMatrix.h"
+#include "Linedrawing3DFigureParser.h"
 
 Linedrawing3D::Linedrawing3D(const ini::Configuration &configuration) {
     // Get data from configuration
@@ -16,7 +17,7 @@ Linedrawing3D::Linedrawing3D(const ini::Configuration &configuration) {
     for (int i = 0; i < nrFigures; i++) {
         // Create new figure form data
         std::string figureName = "Figure" + std::to_string(i);
-        auto newFigure = Figure3D(configuration[figureName]);
+        auto newFigure = Linedrawing3DFigureParser::parseLinedrawing3D(configuration[figureName]);
 
         // Apply transformations to all figures (rotations, translation, scaling and eye point transformation)
         newFigure.applyTransformation(eye);

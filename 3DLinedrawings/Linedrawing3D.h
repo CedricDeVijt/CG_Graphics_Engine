@@ -4,10 +4,10 @@
 
 #include "../ini_configuration.h"
 #include "../easy_image.h"
-#include "vector3d.h"
-#include "Figure3D.h"
-#include "../TransformationMatrix.h"
-#include "../2DLSystem/Line2D.h"
+#include "../objects/vector3d.h"
+#include "../objects/Figure3D.h"
+#include "../objects/TransformationMatrix.h"
+#include "../objects/Line2D.h"
 
 class Linedrawing3D {
 public:

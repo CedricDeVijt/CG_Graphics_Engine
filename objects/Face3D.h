@@ -4,7 +4,7 @@
 
 #include <vector>
 #include "vector3d.h"
-#include "../2DLSystem/Point2D.h"
+#include "Point2D.h"
 
 class Face3D {
 public:
