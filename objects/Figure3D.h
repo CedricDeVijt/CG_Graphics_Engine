@@ -17,9 +17,15 @@ public:
 
     // Getters
     const img::Color &getColor() const;
+    int getRotateX() const;
+    int getRotateY() const;
+    int getRotateZ() const;
+    double getScale() const;
+    const Vector3D &getCenter() const;
 
     // Setters
     void applyTransformation(Vector3D eye);
+    void applyTransformation(const Matrix& transformationMatrix);
 
     std::vector<Face3D> faces;
     std::vector<Vector3D> points;

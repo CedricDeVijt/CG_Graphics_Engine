@@ -20,7 +20,8 @@ Linedrawing3D::Linedrawing3D(const ini::Configuration &configuration) {
         auto newFigure = Linedrawing3DFigureParser::parseLinedrawing3D(configuration[figureName]);
 
         // Apply transformations to all figures (rotations, translation, scaling and eye point transformation)
-        newFigure.applyTransformation(eye);
+        Matrix combinedMatrix = TransformationMatrix::linedrawing3DTransformation(newFigure.getScale(), newFigure.getRotateX(), newFigure.getRotateY(), newFigure.getRotateZ(), newFigure.getCenter(), eye);
+        newFigure.applyTransformation(combinedMatrix);
 
         // Add figure to list
         figuresList.push_back(newFigure);
@@ -42,7 +43,6 @@ Linedrawing3D::Linedrawing3D(const ini::Configuration &configuration) {
 
     // Draw lines on image
     draw2DLines(lines);
-
 }
 
 Lines2D Linedrawing3D::doProjection(const Figures3D &figures) {
@@ -61,24 +61,6 @@ Lines2D Linedrawing3D::doProjection(const Figures3D &figures) {
             lines.emplace_back(point1, point2, figure.getColor());
         }
     }
-    return lines;
-}
-
-Lines2D Linedrawing3D::doProjection(const Figure3D &figure) {
-    Lines2D lines;
-
-    std::vector<Face3D> faces = figure.faces;
-    std::vector<Vector3D> points = figure.points;
-
-    for (auto face : faces){
-        auto point_indexes = face.point_indexes;
-
-        Point2D point1 = doProjection(points[point_indexes[0]], 1);
-        Point2D point2 = doProjection(points[point_indexes[1]], 1);
-
-        lines.emplace_back(point1, point2, figure.getColor());
-        }
-
     return lines;
 }
 

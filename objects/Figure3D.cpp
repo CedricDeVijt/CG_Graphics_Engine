@@ -9,14 +9,32 @@ Figure3D::Figure3D(const std::vector<Face3D> &faces, const std::vector<Vector3D>
     rotateZ = rotations[2];
 }
 
-void Figure3D::applyTransformation(Vector3D eye) {
-    Matrix combinedMatrix = TransformationMatrix::linedrawing3DTransformation(scale, rotateX, rotateY, rotateZ, center, eye);
+const img::Color &Figure3D::getColor() const {
+    return color;
+}
 
+void Figure3D::applyTransformation(const Matrix& transformationMatrix) {
     for (auto &point : points){
-        point = point * combinedMatrix;
+        point = point * transformationMatrix;
     }
 }
 
-const img::Color &Figure3D::getColor() const {
-    return color;
+int Figure3D::getRotateX() const {
+    return rotateX;
+}
+
+int Figure3D::getRotateY() const {
+    return rotateY;
+}
+
+int Figure3D::getRotateZ() const {
+    return rotateZ;
+}
+
+double Figure3D::getScale() const {
+    return scale;
+}
+
+const Vector3D &Figure3D::getCenter() const {
+    return center;
 }
