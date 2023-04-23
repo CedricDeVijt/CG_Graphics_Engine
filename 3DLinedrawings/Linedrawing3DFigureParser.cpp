@@ -4,7 +4,7 @@
 
 #include "Linedrawing3DFigureParser.h"
 
-Figure3D Linedrawing3DFigureParser::parseLinedrawing3D(const ini::Section &figure) {
+Figure3D Linedrawing3DFigureParser::parseLinedrawing3DFigure(const ini::Section &figure) {
     std::vector<Face3D> faces;
     std::vector<Vector3D> points;
 

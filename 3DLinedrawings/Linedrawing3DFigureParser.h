@@ -6,7 +6,7 @@
 
 class Linedrawing3DFigureParser {
 public:
-    static Figure3D parseLinedrawing3D(const ini::Section& figure);
+    static Figure3D parseLinedrawing3DFigure(const ini::Section& figure);
 };
 
 
