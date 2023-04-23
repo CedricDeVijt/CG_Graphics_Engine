@@ -3,6 +3,7 @@
 #include "2DLSystem/LSystem2D.h"
 #include "3DLinedrawings/Linedrawing3D.h"
 #include "objects/Figure3D.h"
+#include "3DWireframeFigureDrawings/WireframeFigureDrawing3D.h"
 
 #include <fstream>
 #include <iostream>
@@ -36,7 +37,8 @@ img::EasyImage generate_image(const ini::Configuration &configuration)
         // 3DL-system consists of bodies
         else {
             // 3D bodies
-            return {};
+            auto system = WireframeFigureDrawing3D(configuration);
+            return system.getImage();
         }
     }
 	return {};
