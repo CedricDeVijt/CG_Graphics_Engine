@@ -2,6 +2,10 @@
 #include "../objects/Figure3D.h"
 #include "../objects/TransformationMatrix.h"
 #include "Linedrawing3DFigureParser.h"
+#include "../SharedFunctions/DrawLines.h"
+#include "../SharedFunctions/ScaleLines.h"
+#include "../SharedFunctions/ImageSize.h"
+#include "../SharedFunctions/ProjectionFunctions.h"
 
 Linedrawing3D::Linedrawing3D(const ini::Configuration &configuration) {
     // Get data from configuration
@@ -17,10 +21,10 @@ Linedrawing3D::Linedrawing3D(const ini::Configuration &configuration) {
     for (int i = 0; i < nrFigures; i++) {
         // Create new figure form data
         std::string figureName = "Figure" + std::to_string(i);
-        auto newFigure = Linedrawing3DFigureParser::parseLinedrawing3D(configuration[figureName]);
+        auto newFigure = Linedrawing3DFigureParser::parseLinedrawing3DFigure(configuration[figureName]);
 
         // Apply transformations to all figures (rotations, translation, scaling and eye point transformation)
-        Matrix combinedMatrix = TransformationMatrix::linedrawing3DTransformation(newFigure.getScale(), newFigure.getRotateX(), newFigure.getRotateY(), newFigure.getRotateZ(), newFigure.getCenter(), eye);
+        Matrix combinedMatrix = TransformationMatrix::linedrawing3DTransformation(newFigure.getScale(), newFigure.getRotateX()*(M_PI/180), newFigure.getRotateY()*(M_PI/180), newFigure.getRotateZ()*(M_PI/180), newFigure.getCenter(), eye);
         newFigure.applyTransformation(combinedMatrix);
 
         // Add figure to list
@@ -28,13 +32,13 @@ Linedrawing3D::Linedrawing3D(const ini::Configuration &configuration) {
     }
 
     // Project lines of all figures
-    lines = doProjection(figuresList);
+    lines = ProjectionFunctions::doProjection(figuresList);
 
     // Calculate size image
-    std::vector<int> imageSize = getImageSize(lines, size);
+    std::vector<int> imageSize = ImageSize::getImageSize(lines, size, x_min, x_max,y_min, y_max);
 
     // Scale lines
-    scale2DLines(lines, imageSize);
+    ScaleLines::scale2DLines(lines, imageSize, x_min, x_max, y_min,  y_max);
 
     // Make image
     image = img::EasyImage(imageSize[0], imageSize[1], img::Color(backgroundcolor[0]*255,
@@ -42,7 +46,7 @@ Linedrawing3D::Linedrawing3D(const ini::Configuration &configuration) {
                                                                   backgroundcolor[2]*255));
 
     // Draw lines on image
-    draw2DLines(lines);
+    DrawLines::draw2DLines(image, lines);
 }
 
 Lines2D Linedrawing3D::doProjection(const Figures3D &figures) {
