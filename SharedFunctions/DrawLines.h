@@ -6,7 +6,7 @@
 
 class DrawLines {
 public:
-    static void draw2DLines(img::EasyImage &image, Lines2D lines);
+    static void draw2DLines(img::EasyImage &image, const Lines2D& lines);
 };
 
 
