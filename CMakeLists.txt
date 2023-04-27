@@ -21,33 +21,39 @@ set(engine_sources
 		l_parser.cc
 		l_parser.h
 
-		objects/Line2D.cpp
-		objects/Line2D.h
-		objects/LineColor.h
-		objects/Point2D.cpp
-		objects/Point2D.h
-		objects/Face3D.h
-		objects/Face3D.cpp
-		objects/Figure3D.h
-		objects/Figure3D.cpp
-		objects/vector3d.h
-		objects/vector3d.cc
-		objects/TransformationMatrix.cpp
-		objects/TransformationMatrix.h
+		Objects/Line2D.cpp
+		Objects/Line2D.h
+		Objects/LineColor.h
+		Objects/Point2D.cpp
+		Objects/Point2D.h
+		Objects/Face3D.h
+		Objects/Face3D.cpp
+		Objects/Figure3D.h
+		Objects/Figure3D.cpp
+		Objects/vector3d.h
+		Objects/vector3d.cc
+		Objects/TransformationMatrix.cpp
+		Objects/TransformationMatrix.h
 
 		2DLSystem/LSystem2D.cpp
 		2DLSystem/LSystem2D.h
 
-		3DLinedrawings/Linedrawing3D.h
-		3DLinedrawings/Linedrawing3D.cpp
-		3DLinedrawings/Linedrawing3DFigureParser.cpp
-		3DLinedrawings/Linedrawing3DFigureParser.h
 
-		3DWireframeFigureDrawings/WireframeFigureDrawing3D.cpp
-		3DWireframeFigureDrawings/WireframeFigureDrawing3D.h
-		3DWireframeFigureDrawings/WireframeFigureDrawing3DParser.cpp
-		3DWireframeFigureDrawings/WireframeFigureDrawing3DParser.h
-        SharedFunctions/ProjectionFunctions.cpp SharedFunctions/ProjectionFunctions.h SharedFunctions/ImageSize.cpp SharedFunctions/ImageSize.h SharedFunctions/ScaleLines.cpp SharedFunctions/ScaleLines.h SharedFunctions/DrawLines.cpp SharedFunctions/DrawLines.h)
+		3DLinedrawings/WireframeFigureParser.cpp
+		3DLinedrawings/WireframeFigureParser.h
+        SharedFunctions/ProjectionFunctions.cpp
+		SharedFunctions/ProjectionFunctions.h
+		SharedFunctions/ImageSize.cpp
+		SharedFunctions/ImageSize.h
+		SharedFunctions/ScaleLines.cpp
+		SharedFunctions/ScaleLines.h
+		SharedFunctions/DrawLines.cpp
+		SharedFunctions/DrawLines.h
+		3DLinedrawings/WireframeParser.cpp
+		3DLinedrawings/WireframeParser.h
+		3DLinedrawings/WireframeFigureParser.cpp
+		3DLinedrawings/WireframeFigureParser.h
+		)
 
 ############################################################
 # Create an executable
