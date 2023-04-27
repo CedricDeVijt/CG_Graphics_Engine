@@ -1,9 +1,8 @@
 #include "easy_image.h"
 #include "ini_configuration.h"
 #include "2DLSystem/LSystem2D.h"
-#include "3DLinedrawings/Linedrawing3D.h"
 #include "objects/Figure3D.h"
-#include "3DWireframeFigureDrawings/WireframeFigureDrawing3D.h"
+#include "3DLinedrawings/WireframeParser.h"
 
 #include <fstream>
 #include <iostream>
@@ -29,17 +28,7 @@ img::EasyImage generate_image(const ini::Configuration &configuration)
         return system.getImage();
 
     } else if (type == "Wireframe"){
-        // 3DL-system is line drawing
-        if (configuration["Figure0"]["type"].as_string_or_die() == "LineDrawing"){
-            auto system = Linedrawing3D(configuration);
-            return system.getImage();
-        }
-        // 3DL-system consists of bodies
-        else {
-            // 3D bodies
-            auto system = WireframeFigureDrawing3D(configuration);
-            return system.getImage();
-        }
+        return WireframeParser::parseWireframe(configuration);
     }
 	return {};
 }
