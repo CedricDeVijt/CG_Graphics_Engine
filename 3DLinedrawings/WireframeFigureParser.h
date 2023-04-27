@@ -1,15 +1,17 @@
-#ifndef CG_GRAPICS_ENGINE_WIREFRAMEFIGUREDRAWING3DPARSER_H
-#define CG_GRAPICS_ENGINE_WIREFRAMEFIGUREDRAWING3DPARSER_H
+#ifndef CG_GRAPICS_ENGINE_WIREFRAMEFIGUREPARSER_H
+#define CG_GRAPICS_ENGINE_WIREFRAMEFIGUREPARSER_H
 
 
 #include "../ini_configuration.h"
 #include "../objects/Figure3D.h"
 
-class WireframeFigureDrawing3DParser {
+class WireframeFigureParser {
 public:
 
     static Figure3D parseWireframeFigureDrawing3DFigure(const ini::Section& figure);
 
+private:
+    static Figure3D parseLineDrawing(const ini::Section& figure, std::vector<int> rotations, double scale, const Vector3D& center, const img::Color& color);
     static Figure3D parseCube(const ini::Section& figure, std::vector<int> rotations, double scale, const Vector3D& center, const img::Color& color);
     static Figure3D parseTetrahedron(const ini::Section& figure, std::vector<int> rotations, double scale, const Vector3D& center, const img::Color& color);
     static Figure3D parseOctahedron(const ini::Section& figure, std::vector<int> rotations, double scale, const Vector3D& center, const img::Color& color);
@@ -22,4 +24,4 @@ public:
 };
 
 
-#endif //CG_GRAPICS_ENGINE_WIREFRAMEFIGUREDRAWING3DPARSER_H
+#endif //CG_GRAPICS_ENGINE_WIREFRAMEFIGUREPARSER_H

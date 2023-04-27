@@ -314,7 +314,7 @@ class Vector3D
                 /**
                  * \brief Adds another Vector3D object to this one.
                  *
-                 * If both objects represent vectors the result will also be a vector.
+                 * If both Objects represent vectors the result will also be a vector.
                  * Otherwise the result is a point.
                  *
                  * \param rhs The vector that is added to this vector.
@@ -348,7 +348,7 @@ class Vector3D
                 /**
                  * \brief Applies a transformation
                  *
-                 * Please note that before the transformation is actually performed, assertions are used to make sure that passed Matrix objects represents a VALID
+                 * Please note that before the transformation is actually performed, assertions are used to make sure that passed Matrix Objects represents a VALID
                  * transformation. To this end, the last column of the matrix MUST equal:
                  * (0)
                  * (0)

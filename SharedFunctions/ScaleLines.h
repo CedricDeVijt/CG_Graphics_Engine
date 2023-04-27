@@ -7,7 +7,7 @@
 
 class ScaleLines {
 public:
-    static void scale2DLines(Lines2D &lines, const std::vector<int> imageSize, const double &x_min, const double &x_max, const double &y_min, const double &y_max);
+    static void scale2DLines(Lines2D &lines, std::vector<int> imageSize, const double &x_min, const double &x_max, const double &y_min, const double &y_max);
 
 };
 
