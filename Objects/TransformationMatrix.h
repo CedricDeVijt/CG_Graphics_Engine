@@ -1,7 +1,7 @@
 #ifndef CG_GRAPICS_ENGINE_TRANSFORMATIONMATRIX_H
 #define CG_GRAPICS_ENGINE_TRANSFORMATIONMATRIX_H
 
-
+#include <cmath>
 #include "vector3d.h"
 
 class TransformationMatrix {

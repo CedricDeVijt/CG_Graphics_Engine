@@ -3,7 +3,7 @@
 
 
 #include <vector>
-#include "../objects/Line2D.h"
+#include "../Objects/Line2D.h"
 
 class ScaleLines {
 public:

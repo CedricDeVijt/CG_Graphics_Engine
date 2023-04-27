@@ -1,8 +1,8 @@
 #include "WireframeParser.h"
 #include "WireframeFigureParser.h"
 
-#include "../objects/Line2D.h"
-#include "../objects/TransformationMatrix.h"
+#include "../Objects/Line2D.h"
+#include "../Objects/TransformationMatrix.h"
 #include "../SharedFunctions/DrawLines.h"
 #include "../SharedFunctions/ImageSize.h"
 #include "../SharedFunctions/ProjectionFunctions.h"

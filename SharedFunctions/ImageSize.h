@@ -2,7 +2,7 @@
 #define CG_GRAPICS_ENGINE_IMAGESIZE_H
 
 
-#include "../objects/Line2D.h"
+#include "../Objects/Line2D.h"
 
 class ImageSize {
 public:

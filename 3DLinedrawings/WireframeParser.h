@@ -3,9 +3,10 @@
 #define CG_GRAPICS_ENGINE_WIREFRAMEPARSER_H
 
 
+#include <cmath>
 #include "../easy_image.h"
 #include "../ini_configuration.h"
-#include "../objects/Figure3D.h"
+#include "../Objects/Figure3D.h"
 
 class WireframeParser {
 public:

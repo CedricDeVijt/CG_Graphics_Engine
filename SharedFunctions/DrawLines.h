@@ -2,7 +2,9 @@
 #define CG_GRAPICS_ENGINE_DRAWLINES_H
 
 
-#include "../objects/Line2D.h"
+#include <cmath>
+#include "../Objects/Line2D.h"
+
 
 class DrawLines {
 public:

@@ -1,10 +1,11 @@
+#include <climits>
 #include "ImageSize.h"
 
 std::vector<int> ImageSize::getImageSize(Lines2D lines, int size, double &x_min, double &x_max, double &y_min, double &y_max){
-    x_max = -INFINITY;
-    y_max = -INFINITY;
-    x_min = INFINITY;
-    y_min = INFINITY;
+    x_max = -std::numeric_limits<double>::infinity() ;
+    y_max = -std::numeric_limits<double>::infinity() ;
+    x_min = std::numeric_limits<double>::infinity() ;
+    y_min = std::numeric_limits<double>::infinity() ;
 
     for (const Line2D& line : lines){
         // x_max

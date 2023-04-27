@@ -1,7 +1,7 @@
 #include "easy_image.h"
 #include "ini_configuration.h"
 #include "2DLSystem/LSystem2D.h"
-#include "objects/Figure3D.h"
+#include "Objects/Figure3D.h"
 #include "3DLinedrawings/WireframeParser.h"
 
 #include <fstream>

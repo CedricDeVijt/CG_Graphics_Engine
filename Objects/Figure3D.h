@@ -12,7 +12,7 @@
 class Figure3D {
 public:
     // Constructor
-    Figure3D(const std::vector<Face3D> &faces, const std::vector<Vector3D> &points, std::vector<int> rotations,
+    Figure3D(const std::vector<Face3D> &faces, const std::vector<Vector3D> &points, std::vector<double> rotations,
              double scale, Vector3D center, img::Color color);
 
     // Getters
@@ -32,9 +32,9 @@ public:
 private:
 
     std::string type;
-    int rotateX;
-    int rotateY;
-    int rotateZ;
+    double rotateX;
+    double rotateY;
+    double rotateZ;
     double scale;
     Vector3D center;
 

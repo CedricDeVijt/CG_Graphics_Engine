@@ -3,10 +3,10 @@
 Figure3D WireframeFigureParser::parseWireframeFigureDrawing3DFigure(const ini::Section &figure) {
     std::string type = figure["type"].as_string_or_die();
 
-    int rotateX = figure["rotateX"].as_int_or_die();
-    int rotateY = figure["rotateY"].as_int_or_die();
-    int rotateZ = figure["rotateZ"].as_int_or_die();
-    std::vector<int> rotations = {rotateX, rotateY, rotateZ};
+    double rotateX = figure["rotateX"].as_int_or_die();
+    double rotateY = figure["rotateY"].as_int_or_die();
+    double rotateZ = figure["rotateZ"].as_int_or_die();
+    std::vector<double> rotations = {rotateX, rotateY, rotateZ};
 
     double scale = figure["scale"].as_double_or_die();
     auto centerTuple = figure["center"].as_int_tuple_or_die();
@@ -39,7 +39,7 @@ Figure3D WireframeFigureParser::parseWireframeFigureDrawing3DFigure(const ini::S
     }
 }
 
-Figure3D WireframeFigureParser::parseLineDrawing(const ini::Section &figure, std::vector<int> rotations, double scale,
+Figure3D WireframeFigureParser::parseLineDrawing(const ini::Section &figure, std::vector<double> rotations, double scale,
                                                  const Vector3D &center, const img::Color &color) {
     std::vector<Face3D> faces;
     std::vector<Vector3D> points;
@@ -51,7 +51,7 @@ Figure3D WireframeFigureParser::parseLineDrawing(const ini::Section &figure, std
     for (int i = 0; i < nrPoints; i++) {
         std::string pointName = "point" + std::to_string(i);
         auto figurePoint = figure[pointName].as_double_tuple_or_die();
-        auto newPoint  = Vector3D::point(figurePoint[0]*scale, figurePoint[1]*scale, figurePoint[2]*scale);
+        auto newPoint  = Vector3D::point(figurePoint[0], figurePoint[1], figurePoint[2]);
         points.emplace_back(newPoint);
     }
 
@@ -66,7 +66,7 @@ Figure3D WireframeFigureParser::parseLineDrawing(const ini::Section &figure, std
     return {faces, points, rotations, scale, center, color};
 }
 
-Figure3D WireframeFigureParser::parseCube(const ini::Section& figure, std::vector<int> rotations, double scale, const Vector3D& center, const img::Color& color) {
+Figure3D WireframeFigureParser::parseCube(const ini::Section& figure, std::vector<double> rotations, double scale, const Vector3D& center, const img::Color& color) {
     std::vector<Face3D> faces;
     std::vector<Vector3D> points;
 
@@ -89,7 +89,7 @@ Figure3D WireframeFigureParser::parseCube(const ini::Section& figure, std::vecto
     return {faces, points, rotations, scale, center, color};
 }
 
-Figure3D WireframeFigureParser::parseTetrahedron(const ini::Section& figure, std::vector<int> rotations, double scale, const Vector3D& center, const img::Color& color) {
+Figure3D WireframeFigureParser::parseTetrahedron(const ini::Section& figure, std::vector<double> rotations, double scale, const Vector3D& center, const img::Color& color) {
     std::vector<Face3D> faces;
     std::vector<Vector3D> points;
 
@@ -106,7 +106,7 @@ Figure3D WireframeFigureParser::parseTetrahedron(const ini::Section& figure, std
     return {faces, points, rotations, scale, center, color};
 }
 
-Figure3D WireframeFigureParser::parseOctahedron(const ini::Section& figure, std::vector<int> rotations, double scale, const Vector3D& center, const img::Color& color) {
+Figure3D WireframeFigureParser::parseOctahedron(const ini::Section& figure, std::vector<double> rotations, double scale, const Vector3D& center, const img::Color& color) {
     std::vector<Face3D> faces;
     std::vector<Vector3D> points;
 
@@ -129,7 +129,7 @@ Figure3D WireframeFigureParser::parseOctahedron(const ini::Section& figure, std:
     return {faces, points, rotations, scale, center, color};
 }
 
-Figure3D WireframeFigureParser::parseIcosahedron(const ini::Section& figure, std::vector<int> rotations, double scale, const Vector3D& center, const img::Color& color) {
+Figure3D WireframeFigureParser::parseIcosahedron(const ini::Section& figure, std::vector<double> rotations, double scale, const Vector3D& center, const img::Color& color) {
     std::vector<Face3D> faces;
     std::vector<Vector3D> points;
 
