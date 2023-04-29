@@ -48,7 +48,7 @@ Figures3D WireframeParser::getWireframeFigures(const ini::Configuration &configu
         Figure3D newFigure = WireframeFigureParser::parseWireframeFigureDrawing3DFigure(configuration[figureName]);
 
         // Apply transformations to all figures (rotations, translation, scaling and eye point transformation)
-        newFigure.applyTransformation(TransformationMatrix::linedrawing3DTransformation(newFigure.getScale(), newFigure.getRotateX()*M_PI/180, newFigure.getRotateY()*M_PI/180, newFigure.getRotateZ()*M_PI/180, newFigure.getCenter(), eye));
+        newFigure.applyTransformation(TransformationMatrix::linedrawing3DTransformation(newFigure.getScale(), newFigure.getRotateX()*M_PI/180.0, newFigure.getRotateY()*M_PI/180.0, newFigure.getRotateZ()*M_PI/180.0, newFigure.getCenter(), eye));
 
         // Add figure to list
         figuresList.push_back(newFigure);
