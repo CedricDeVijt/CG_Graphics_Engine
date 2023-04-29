@@ -35,11 +35,10 @@ set(engine_sources
 		Objects/TransformationMatrix.cpp
 		Objects/TransformationMatrix.h
 
-		2DLSystem/LSystem2D.cpp
-		2DLSystem/LSystem2D.h
+		2DLSystem/LSystem2DParser.cpp
+		2DLSystem/LSystem2DParser.h
 
-
-		3DLinedrawings/WireframeFigureParser.cpp
+        3DLinedrawings/WireframeFigureParser.cpp
 		3DLinedrawings/WireframeFigureParser.h
         SharedFunctions/ProjectionFunctions.cpp
 		SharedFunctions/ProjectionFunctions.h
