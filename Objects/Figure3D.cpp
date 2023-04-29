@@ -38,3 +38,7 @@ double Figure3D::getScale() const {
 const Vector3D &Figure3D::getCenter() const {
     return center;
 }
+
+Figure3D::Figure3D() {
+
+}
