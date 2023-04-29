@@ -1,8 +1,8 @@
 #include "easy_image.h"
 #include "ini_configuration.h"
-#include "2DLSystem/LSystem2D.h"
 #include "Objects/Figure3D.h"
 #include "3DLinedrawings/WireframeParser.h"
+#include "2DLSystem/LSystem2DParser.h"
 
 #include <fstream>
 #include <iostream>
@@ -11,22 +11,11 @@
 
 
 
-img::EasyImage generate_image(const ini::Configuration &configuration)
-{
+img::EasyImage generate_image(const ini::Configuration &configuration){
     std::string type = configuration["General"]["type"].as_string_or_die();
-    int size = configuration["General"]["size"].as_int_or_die();
-    std::vector<int> backgroundcolor = configuration["General"]["backgroundcolor"].as_int_tuple_or_die();
 
     if (type == "2DLSystem"){
-        std::string inputfile = configuration["2DLSystem"]["inputfile"].as_string_or_die();
-        std::vector<double> color = configuration["2DLSystem"]["color"].as_double_tuple_or_die();
-
-        // Create 2DL-system
-        LSystem2D system(size, backgroundcolor, inputfile, color);
-
-        // return image from 2DL-System
-        return system.getImage();
-
+        return LSystem2DParser::parse2DLSystem(configuration);
     } else if (type == "Wireframe"){
         return WireframeParser::parseWireframe(configuration);
     }
