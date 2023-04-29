@@ -12,6 +12,7 @@ public:
 
 private:
     static Figure3D parseLineDrawing(const ini::Section& figure, std::vector<double> rotations, double scale, const Vector3D& center, const img::Color& color);
+    static Figure3D parse3DLSystem(const ini::Section& figure, std::vector<double> rotations, double scale, const Vector3D& center, const img::Color& color);
     static Figure3D parseCube(const ini::Section& figure, std::vector<double> rotations, double scale, const Vector3D& center, const img::Color& color);
     static Figure3D parseTetrahedron(const ini::Section& figure, std::vector<double> rotations, double scale, const Vector3D& center, const img::Color& color);
     static Figure3D parseOctahedron(const ini::Section& figure, std::vector<double> rotations, double scale, const Vector3D& center, const img::Color& color);
