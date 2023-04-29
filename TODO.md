@@ -12,5 +12,13 @@
 ### Parts
 - [x] 3D Lijntekeningen (1 punt)
 ### Known errors
-- line_drawings027.ini werkt nog niet
+- /
+
+## 3D Lichamen
+### Parts
+- [ ] 3D Lichamen (0.75 punten)
+- [ ] 3D L-Systemen (0.25 punten)
+### Known errors
+- /
+
 
