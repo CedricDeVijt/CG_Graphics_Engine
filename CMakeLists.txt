@@ -23,8 +23,7 @@ set(engine_sources
 
 		Objects/Line2D.cpp
 		Objects/Line2D.h
-		Objects/LineColor.h
-		Objects/Point2D.cpp
+        Objects/Point2D.cpp
 		Objects/Point2D.h
 		Objects/Face3D.h
 		Objects/Face3D.cpp
