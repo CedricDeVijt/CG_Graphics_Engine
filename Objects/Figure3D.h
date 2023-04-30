@@ -13,7 +13,7 @@ class Figure3D {
 public:
     // Constructor
     Figure3D();
-    Figure3D(const std::vector<Face3D> &faces, const std::vector<Vector3D> &points, std::vector<double> rotations,
+    Figure3D(const std::vector<Face3D> &faces, const std::vector<Vector3D> &points, const std::vector<double> &rotations,
              double scale, Vector3D center, img::Color color);
 
     // Getters

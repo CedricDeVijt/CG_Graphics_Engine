@@ -1,11 +1,5 @@
 #include "Line2D.h"
 
-Line2D::Line2D(Point2D pointA_, Point2D pointB_, LineColor color) {
-    this->pointA = pointA_;
-    this->pointB = pointB_;
-    this->color = color;
-}
-
 Line2D::Line2D(const Point2D &pointA, const Point2D &pointB, const img::Color &colorImg) : pointA(pointA),
                                                                                            pointB(pointB),
                                                                                            colorIMG(colorImg) {}

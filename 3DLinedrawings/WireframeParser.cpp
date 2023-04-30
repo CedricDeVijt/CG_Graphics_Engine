@@ -45,7 +45,7 @@ Figures3D WireframeParser::getWireframeFigures(const ini::Configuration &configu
     for (int i = 0; i < nrFigures; i++) {
         // Create new figure form data
         std::string figureName = "Figure" + std::to_string(i);
-        Figure3D newFigure = WireframeFigureParser::parseWireframeFigureDrawing3DFigure(configuration[figureName]);
+        Figure3D newFigure = WireframeFigureParser::parseWireframeFigure(configuration[figureName]);
 
         // Apply transformations to all figures (rotations, translation, scaling and eye point transformation)
         newFigure.applyTransformation(TransformationMatrix::linedrawing3DTransformation(newFigure.getScale(), newFigure.getRotateX()*M_PI/180.0, newFigure.getRotateY()*M_PI/180.0, newFigure.getRotateZ()*M_PI/180.0, newFigure.getCenter(), eye));

@@ -6,13 +6,12 @@
 #include <cmath>
 
 img::EasyImage LSystem2DParser::parse2DLSystem(const ini::Configuration &configuration) {
+    // Get data from ini file
     std::string type = configuration["General"]["type"].as_string_or_die();
     int size = configuration["General"]["size"].as_int_or_die();
     std::vector<int> backgroundcolor = configuration["General"]["backgroundcolor"].as_int_tuple_or_die();
-
     std::string inputfile = configuration["2DLSystem"]["inputfile"].as_string_or_die();
     std::vector<double> color = configuration["2DLSystem"]["color"].as_double_tuple_or_die();
-
     img::Color lineColor(color[0]*255,color[1]*255,color[2]*255);
 
     // get LSystem2D from .2DL file
