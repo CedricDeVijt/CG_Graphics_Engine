@@ -18,6 +18,8 @@
 ### Parts
 - [ ] 3D Lichamen (0.75 punten)
 - [ ] 3D L-Systemen (0.25 punten)
+### Possible mistakes
+- Volgorde vlakken cilinder
 ### Known errors
 - /
 
