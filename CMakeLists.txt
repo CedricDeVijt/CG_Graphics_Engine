@@ -51,7 +51,8 @@ set(engine_sources
 		3DLinedrawings/WireframeParser.h
 		3DLinedrawings/WireframeFigureParser.cpp
 		3DLinedrawings/WireframeFigureParser.h
-		)
+		SharedFunctions/LSystemFunctions.cpp
+		SharedFunctions/LSystemFunctions.h)
 
 ############################################################
 # Create an executable
