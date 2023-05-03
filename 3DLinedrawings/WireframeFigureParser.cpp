@@ -23,6 +23,8 @@ Figure3D WireframeFigureParser::parseWireframeFigure(const ini::Section &figure)
     std::vector<double> figureColor = figure["color"].as_double_tuple_or_die();
     img::Color color = img::Color(figureColor[0]*255, figureColor[1]*255, figureColor[2]*255);
 
+    std::string inputfile = figure["inputfile"].as_string_or_default("");
+
     double R = figure["R"].as_double_or_default(0);
     double r = figure["r"].as_double_or_default(0);
     int n = figure["n"].as_int_or_default(0);
@@ -34,7 +36,7 @@ Figure3D WireframeFigureParser::parseWireframeFigure(const ini::Section &figure)
     if (type == "LineDrawing") {
         return WireframeFigureParser::parseLineDrawing(figure, rotations, scale, center, color);
     }else if (type == "3DLSystem"){
-        return WireframeFigureParser::parse3DLSystem(figure, rotations, scale, center, color);
+        return WireframeFigureParser::parse3DLSystem(inputfile, rotations, scale, center, color);
     } else if (type == "Cube"){
         return WireframeFigureParser::parseCube(rotations, scale, center, color);
     } else if (type == "Tetrahedron"){
@@ -84,10 +86,7 @@ Figure3D WireframeFigureParser::parseLineDrawing(const ini::Section &figure, con
     return {faces, points, rotations, scale, center, color};
 }
 
-Figure3D WireframeFigureParser::parse3DLSystem(const ini::Section &figure, const std::vector<double> &rotations, const double &scale, const Vector3D &center, const img::Color &color) {
-    // Get input file
-    std::string inputfile = figure["inputfile"].as_string_or_die();
-
+Figure3D WireframeFigureParser::parse3DLSystem(const std::string &inputfile, const std::vector<double> &rotations, const double &scale, const Vector3D &center, const img::Color &color) {
     // Parse L-system from inputfile
     LParser::LSystem3D l_system = LSystemFunctions::parseLSystem3D(inputfile);
 
