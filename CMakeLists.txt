@@ -52,7 +52,7 @@ set(engine_sources
 		3DLinedrawings/WireframeFigureParser.cpp
 		3DLinedrawings/WireframeFigureParser.h
 		SharedFunctions/LSystemFunctions.cpp
-		SharedFunctions/LSystemFunctions.h)
+		SharedFunctions/LSystemFunctions.h SharedFunctions/SplitTriangleFaces.cpp SharedFunctions/SplitTriangleFaces.h)
 
 ############################################################
 # Create an executable
