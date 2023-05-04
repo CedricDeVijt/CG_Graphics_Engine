@@ -16,7 +16,7 @@
 
 ## 3D Lichamen
 ### Parts
-- [ ] 3D Lichamen (0.75 punten)
+- [x] 3D Lichamen (0.75 punten)
 - [x] 3D L-Systemen (0.25 punten)
 ### Possible mistakes
 - Volgorde vlakken cilinder
