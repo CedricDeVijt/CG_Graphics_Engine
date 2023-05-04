@@ -6,8 +6,8 @@
 #include <list>
 #include "vector3d.h"
 #include "Face3D.h"
-#include "../easy_image.h"
-#include "../ini_configuration.h"
+#include "../BaseFiles/easy_image.h"
+#include "../BaseFiles/ini_configuration.h"
 
 class Figure3D {
 public:

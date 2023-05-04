@@ -2,7 +2,7 @@
 #define ENGINE_LINE2D_H
 #include "Point2D.h"
 #include "list"
-#include "../easy_image.h"
+#include "../BaseFiles/easy_image.h"
 
 class Line2D{
 public:
