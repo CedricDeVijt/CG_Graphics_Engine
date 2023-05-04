@@ -37,23 +37,23 @@ Figure3D WireframeFigureParser::parseWireframeFigure(const ini::Section &figure)
     if (type == "LineDrawing") {
         return WireframeFigureParser::parseLineDrawing(figure, rotations, scale, center, color);
     }else if (type == "3DLSystem"){
-        return WireframeFigureParser::parse3DLSystem(inputfile, rotations, scale, center, color);
+        return WireframeFigureParser::parse3DLSystem(rotations, scale, center, color, inputfile);
     } else if (type == "Cube"){
-        return WireframeFigureParser::parseCube(rotations, scale, center, color);
+        return WireframeFigureParser::createCube(rotations, scale, center, color);
     } else if (type == "Tetrahedron"){
-        return WireframeFigureParser::parseTetrahedron(rotations, scale, center, color);
+        return WireframeFigureParser::createTetrahedron(rotations, scale, center, color);
     } else if (type == "Octahedron"){
-        return WireframeFigureParser::parseOctahedron(rotations, scale, center, color);
+        return WireframeFigureParser::createOctahedron(rotations, scale, center, color);
     } else if (type == "Icosahedron"){
-        return WireframeFigureParser::parseIcosahedron(rotations, scale, center, color);
+        return WireframeFigureParser::createIcosahedron(rotations, scale, center, color);
     } else if (type == "Dodecahedron"){
-        return WireframeFigureParser::parseDodecahedron(rotations, scale, center, color);
+        return WireframeFigureParser::createDodecahedron(rotations, scale, center, color);
     } else if (type == "Cylinder"){
-        return WireframeFigureParser::parseCylinder(rotations, scale, center, color, n, height);
+        return WireframeFigureParser::createCylinder(rotations, scale, center, color, n, height);
     } else if (type == "Cone"){
-        return WireframeFigureParser::parseCone(rotations, scale, center, color, n, height);
+        return WireframeFigureParser::createCone(rotations, scale, center, color, n, height);
     } else if (type == "Sphere"){
-        return WireframeFigureParser::parseSphere(rotations, scale, center, color, n);
+        return WireframeFigureParser::createSphere(rotations, scale, center, color, n);
     } else if (type == "Torus"){
         return WireframeFigureParser::parseTorus(rotations, scale, center, color, R, r, n, m);
     } else {
@@ -87,7 +87,9 @@ Figure3D WireframeFigureParser::parseLineDrawing(const ini::Section &figure, con
     return {faces, points, rotations, scale, center, color};
 }
 
-Figure3D WireframeFigureParser::parse3DLSystem(const std::string &inputfile, const std::vector<double> &rotations, const double &scale, const Vector3D &center, const img::Color &color) {
+Figure3D
+WireframeFigureParser::parse3DLSystem(const std::vector<double> &rotations, const double &scale, const Vector3D &center,
+                                      const img::Color &color, const std::string &inputfile) {
     // Parse L-system from inputfile
     LParser::LSystem3D l_system = LSystemFunctions::parseLSystem3D(inputfile);
 
@@ -100,7 +102,7 @@ Figure3D WireframeFigureParser::parse3DLSystem(const std::string &inputfile, con
     return {lines.first, lines.second, rotations, scale, center, color};
 }
 
-Figure3D WireframeFigureParser::parseCube(const std::vector<double> &rotations, const double &scale, const Vector3D& center, const img::Color& color) {
+Figure3D WireframeFigureParser::createCube(const std::vector<double> &rotations, const double &scale, const Vector3D& center, const img::Color& color) {
     std::vector<Face3D> faces;
     std::vector<Vector3D> points;
 
@@ -125,7 +127,7 @@ Figure3D WireframeFigureParser::parseCube(const std::vector<double> &rotations, 
     return {faces, points, rotations, scale, center, color};
 }
 
-Figure3D WireframeFigureParser::parseTetrahedron(const std::vector<double> &rotations, const double &scale, const Vector3D& center, const img::Color& color) {
+Figure3D WireframeFigureParser::createTetrahedron(const std::vector<double> &rotations, const double &scale, const Vector3D& center, const img::Color& color) {
     std::vector<Face3D> faces;
     std::vector<Vector3D> points;
 
@@ -144,7 +146,7 @@ Figure3D WireframeFigureParser::parseTetrahedron(const std::vector<double> &rota
     return {faces, points, rotations, scale, center, color};
 }
 
-Figure3D WireframeFigureParser::parseOctahedron(const std::vector<double> &rotations, const double &scale, const Vector3D& center, const img::Color& color) {
+Figure3D WireframeFigureParser::createOctahedron(const std::vector<double> &rotations, const double &scale, const Vector3D& center, const img::Color& color) {
     std::vector<Face3D> faces;
     std::vector<Vector3D> points;
 
@@ -170,7 +172,7 @@ Figure3D WireframeFigureParser::parseOctahedron(const std::vector<double> &rotat
     return {faces, points, rotations, scale, center, color};
 }
 
-Figure3D WireframeFigureParser::parseIcosahedron(const std::vector<double> &rotations, const double &scale, const Vector3D& center, const img::Color& color) {
+Figure3D WireframeFigureParser::createIcosahedron(const std::vector<double> &rotations, const double &scale, const Vector3D& center, const img::Color& color) {
     std::vector<Face3D> faces;
     std::vector<Vector3D> points;
 
@@ -212,12 +214,12 @@ Figure3D WireframeFigureParser::parseIcosahedron(const std::vector<double> &rota
     return {faces, points, rotations, scale, center, color};
 }
 
-Figure3D WireframeFigureParser::parseDodecahedron(const std::vector<double> &rotations, const double &scale, const Vector3D &center, const img::Color &color) {
+Figure3D WireframeFigureParser::createDodecahedron(const std::vector<double> &rotations, const double &scale, const Vector3D &center, const img::Color &color) {
     std::vector<Face3D> faces;
     std::vector<Vector3D> points;
 
     // Points
-    Figure3D icosahedron = parseIcosahedron({0,0,0}, 1, Vector3D::vector(0,0,0), color);
+    Figure3D icosahedron = createIcosahedron({0, 0, 0}, 1, Vector3D::vector(0, 0, 0), color);
     for (const Face3D &face : icosahedron.faces){
         double x = (icosahedron.points[face.point_indexes[0]].x +
                     icosahedron.points[face.point_indexes[1]].x +
@@ -251,7 +253,7 @@ Figure3D WireframeFigureParser::parseDodecahedron(const std::vector<double> &rot
     return {faces, points, rotations, scale, center, color};
 }
 
-Figure3D WireframeFigureParser::parseCylinder(const std::vector<double> &rotations, const double &scale, const Vector3D& center, const img::Color& color, const int &n, const double &height) {
+Figure3D WireframeFigureParser::createCylinder(const std::vector<double> &rotations, const double &scale, const Vector3D& center, const img::Color& color, const int &n, const double &height) {
     std::vector<Face3D> faces;
     std::vector<Vector3D> points;
 
@@ -277,7 +279,7 @@ Figure3D WireframeFigureParser::parseCylinder(const std::vector<double> &rotatio
     return {faces, points, rotations, scale, center, color};
 }
 
-Figure3D WireframeFigureParser::parseCone(const std::vector<double> &rotations, const double &scale, const Vector3D& center, const img::Color& color, const int &n, const double &height) {
+Figure3D WireframeFigureParser::createCone(const std::vector<double> &rotations, const double &scale, const Vector3D& center, const img::Color& color, const int &n, const double &height) {
     std::vector<Face3D> faces;
     std::vector<Vector3D> points;
 
@@ -299,14 +301,11 @@ Figure3D WireframeFigureParser::parseCone(const std::vector<double> &rotations, 
     return {faces, points, rotations, scale, center, color};
 }
 
-Figure3D WireframeFigureParser::parseSphere(const std::vector<double> &rotations, const double &scale, const Vector3D& center, const img::Color& color, const int &n) {
-    std::vector<Face3D> faces;
-    std::vector<Vector3D> points;
-
+Figure3D WireframeFigureParser::createSphere(const std::vector<double> &rotations, const double &scale, const Vector3D& center, const img::Color& color, const int &n) {
     if (n == 0){
-        return parseIcosahedron(rotations, scale, center, color);
+        return createIcosahedron(rotations, scale, center, color);
     } else {
-        Figure3D icosahedron = parseIcosahedron({0,0,0}, 1, Vector3D::vector(0,0,0), color);
+        Figure3D icosahedron = createIcosahedron({0, 0, 0}, 1, Vector3D::vector(0, 0, 0), color);
 
         // Split icosahedron n-times
         std::pair<std::vector<Face3D>, std::vector<Vector3D>> splitFaces = SplitTriangleFaces::splitFaces(icosahedron.faces, icosahedron.points, n);
@@ -318,9 +317,35 @@ Figure3D WireframeFigureParser::parseSphere(const std::vector<double> &rotations
 
     return {splitFaces.first, splitFaces.second, rotations, scale, center, color};
     }
-
 }
 
 Figure3D WireframeFigureParser::parseTorus(const std::vector<double> &rotations, const double &scale, const Vector3D& center, const img::Color& color, const double &R, const double &r, const int &n, const int &m) {
-    return Figure3D();
+    std::vector<Face3D> faces;
+    std::vector<Vector3D> points;
+    // Split tube
+    for (int i = 0; i < n; ++i) {
+        double u = i * (2 * M_PI / n);
+        // Split circle
+        for (int j = 0; j < m; ++j) {
+            double v = j * (2 * M_PI / m);
+
+            points.emplace_back(Vector3D::point((R + r * cos(v)) * cos(u),
+                                                (R + r * cos(v)) * sin(u),
+                                                r * sin(v)));
+
+            faces.emplace_back(
+                Face3D({
+                    calculateIndex(i,j,m),
+                    calculateIndex((i + 1) % n,j,m),
+                    calculateIndex((i + 1) % n,(j + 1) % m,m),
+                    calculateIndex(i,(j + 1) % m,m)})
+            );
+        }
+    }
+
+    return {faces, points, rotations, scale, center, color};
+}
+
+int WireframeFigureParser::calculateIndex(const int &i, const int &j, const int &m) {
+    return i*m+j;
 }
