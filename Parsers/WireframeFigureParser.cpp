@@ -6,6 +6,24 @@
 #include "../Objects/Line2D.h"
 #include "../SharedFunctions/LSystemFunctions.h"
 #include "../SharedFunctions/SplitTriangleFaces.h"
+#include "../Objects/TransformationMatrix.h"
+
+Figures3D
+WireframeFigureParser::parseWireframeFigures(const ini::Configuration &configuration, Vector3D &eye, int nrFigures) {
+    Figures3D figuresList;
+    for (int i = 0; i < nrFigures; i++) {
+        // Create new figure form data
+        std::string figureName = "Figure" + std::to_string(i);
+        Figure3D newFigure = WireframeFigureParser::parseWireframeFigure(configuration[figureName]);
+
+        // Apply transformations to all figures (rotations, translation, scaling and eye point transformation)
+        newFigure.applyTransformation(TransformationMatrix::linedrawing3DTransformation(newFigure.getScale(), newFigure.getRotateX()*M_PI/180.0, newFigure.getRotateY()*M_PI/180.0, newFigure.getRotateZ()*M_PI/180.0, newFigure.getCenter(), eye));
+
+        // Add figure to list
+        figuresList.push_back(newFigure);
+    }
+    return figuresList;
+}
 
 Figure3D WireframeFigureParser::parseWireframeFigure(const ini::Section &figure) {
     // Get data from config

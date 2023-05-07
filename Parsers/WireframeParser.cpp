@@ -17,7 +17,7 @@ img::EasyImage WireframeParser::parseWireframe(const ini::Configuration &configu
     int nrFigures = configuration["General"]["nrFigures"].as_int_or_die();
 
     // Get all figures from configuration
-    Figures3D figuresList = getWireframeFigures(configuration, eye, nrFigures);
+    Figures3D figuresList = WireframeFigureParser::parseWireframeFigures(configuration, eye, nrFigures);
 
     // Project lines of all figures
     Lines2D lines = ProjectionFunctions::doProjection(figuresList);
@@ -38,20 +38,4 @@ img::EasyImage WireframeParser::parseWireframe(const ini::Configuration &configu
     DrawLines::draw2DLines(image, lines);
 
     return image;
-}
-
-Figures3D WireframeParser::getWireframeFigures(const ini::Configuration &configuration, Vector3D &eye, int nrFigures) {
-    Figures3D figuresList;
-    for (int i = 0; i < nrFigures; i++) {
-        // Create new figure form data
-        std::string figureName = "Figure" + std::to_string(i);
-        Figure3D newFigure = WireframeFigureParser::parseWireframeFigure(configuration[figureName]);
-
-        // Apply transformations to all figures (rotations, translation, scaling and eye point transformation)
-        newFigure.applyTransformation(TransformationMatrix::linedrawing3DTransformation(newFigure.getScale(), newFigure.getRotateX()*M_PI/180.0, newFigure.getRotateY()*M_PI/180.0, newFigure.getRotateZ()*M_PI/180.0, newFigure.getCenter(), eye));
-
-        // Add figure to list
-        figuresList.push_back(newFigure);
-    }
-    return figuresList;
 }

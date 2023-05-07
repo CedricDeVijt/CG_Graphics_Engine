@@ -11,9 +11,6 @@
 class WireframeParser {
 public:
     static img::EasyImage parseWireframe(const ini::Configuration &configuration);
-
-private:
-    static Figures3D getWireframeFigures(const ini::Configuration &configuration, Vector3D &eye, int nrFigures);
 };
 
 
