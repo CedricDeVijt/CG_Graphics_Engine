@@ -6,6 +6,9 @@ public:
     double x;
     double y;
 
+    double z1;
+    double z2;
+
     Point2D() = default;
 
     Point2D(double x, double y){
