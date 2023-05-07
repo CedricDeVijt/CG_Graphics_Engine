@@ -6,11 +6,11 @@
 
 class Line2D{
 public:
-    Line2D(const Point2D &pointA, const Point2D &pointB, const img::Color &colorImg);
+    Line2D(const Point2D &pointA, const Point2D &pointB, const img::Color &lineColor);
 
     Point2D pointA;
     Point2D pointB;
-    img::Color colorIMG;
+    img::Color color;
 
     void scaleLine(const double& factor);
 
