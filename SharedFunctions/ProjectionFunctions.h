@@ -9,8 +9,6 @@ class ProjectionFunctions {
 public:
     static Lines2D doProjection(const Figures3D &figures);
     static Point2D doProjection(const Vector3D &point, double d);
-
-
 };
 
 

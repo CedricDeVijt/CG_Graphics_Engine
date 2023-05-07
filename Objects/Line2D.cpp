@@ -1,8 +1,8 @@
 #include "Line2D.h"
 
-Line2D::Line2D(const Point2D &pointA, const Point2D &pointB, const img::Color &colorImg) : pointA(pointA),
-                                                                                           pointB(pointB),
-                                                                                           colorIMG(colorImg) {}
+Line2D::Line2D(const Point2D &pointA, const Point2D &pointB, const img::Color &lineColor) : pointA(pointA),
+                                                                                            pointB(pointB),
+                                                                                            color(lineColor) {}
 
 void Line2D::scaleLine(const double &factor){
     pointA.x *= factor;
