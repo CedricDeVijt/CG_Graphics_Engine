@@ -15,8 +15,9 @@ set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} ${OWN_GXX_FLAGS}")
 # List all sources
 ############################################################
 set(engine_sources
-		BaseFiles/easy_image.cc
 		engine.cc
+
+		BaseFiles/easy_image.cc
 		BaseFiles/ini_configuration.cc
 		BaseFiles/l_parser.cc
 		BaseFiles/l_parser.h
@@ -33,12 +34,20 @@ set(engine_sources
 		Objects/vector3d.cc
 		Objects/TransformationMatrix.cpp
 		Objects/TransformationMatrix.h
+		Objects/ZBuffer.cpp
+		Objects/ZBuffer.h
 
         Parsers/LSystem2DParser.cpp
         Parsers/LSystem2DParser.h
-
+		Parsers/ZBufferedWireframeParser.cpp
+		Parsers/ZBufferedWireframeParser.h
+		Parsers/WireframeParser.cpp
+		Parsers/WireframeParser.h
 		Parsers/WireframeFigureParser.cpp
 		Parsers/WireframeFigureParser.h
+		Parsers/WireframeFigureParser.cpp
+		Parsers/WireframeFigureParser.h
+
         SharedFunctions/ProjectionFunctions.cpp
 		SharedFunctions/ProjectionFunctions.h
 		SharedFunctions/ImageSize.cpp
@@ -47,12 +56,11 @@ set(engine_sources
 		SharedFunctions/ScaleLines.h
 		SharedFunctions/DrawLines.cpp
 		SharedFunctions/DrawLines.h
-		Parsers/WireframeParser.cpp
-		Parsers/WireframeParser.h
-		Parsers/WireframeFigureParser.cpp
-		Parsers/WireframeFigureParser.h
 		SharedFunctions/LSystemFunctions.cpp
-		SharedFunctions/LSystemFunctions.h SharedFunctions/SplitTriangleFaces.cpp SharedFunctions/SplitTriangleFaces.h)
+		SharedFunctions/LSystemFunctions.h
+		SharedFunctions/SplitTriangleFaces.cpp
+		SharedFunctions/SplitTriangleFaces.h
+		)
 
 ############################################################
 # Create an executable
