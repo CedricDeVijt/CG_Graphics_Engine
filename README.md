@@ -1,11 +1,11 @@
 # Graphics engine for Computer Graphics 1001WETCGR
 
-Made by Cedric De Vijt
+Made by Cedric De Vijt (2023)
 
 ## Description
 
-This is a graphics engine written in C++ For the course Computer Graphics 1001WETCGR at the university of Antwerp.
-As input it gets ini files, the program will parce the files and output it as BMP files.
+This is a graphics engine written in C++ for the course Computer Graphics 1001WETCGR at the university of Antwerp.
+As input the program gets ini files, the program will parse the files and output it as BMP files.
 
 ## Installation instructions
 
@@ -27,7 +27,7 @@ Set the working directory to the directory with the .ini files what you want to 
 
 ## Known issues or limitations
 
-/
+2D L-systemen: L-Systemen met stochastische replacement rules nog niet geïmplementeerd.
 
 ## Credits
 
