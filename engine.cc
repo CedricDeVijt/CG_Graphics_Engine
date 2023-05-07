@@ -3,6 +3,7 @@
 #include "Objects/Figure3D.h"
 #include "Parsers/WireframeParser.h"
 #include "Parsers/LSystem2DParser.h"
+#include "Parsers/ZBufferedWireframeParser.h"
 
 #include <fstream>
 #include <iostream>
@@ -18,6 +19,8 @@ img::EasyImage generate_image(const ini::Configuration &configuration){
         return LSystem2DParser::parse2DLSystem(configuration);
     } else if (type == "Wireframe"){
         return WireframeParser::parseWireframe(configuration);
+    } else if (type == "ZBufferedWireframe"){
+        return ZBufferedWireframeParser::parseZBufferedWireframe(configuration);
     }
 	return {};
 }
