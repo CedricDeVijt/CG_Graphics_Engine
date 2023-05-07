@@ -8,8 +8,13 @@ class Line2D{
 public:
     Line2D(const Point2D &pointA, const Point2D &pointB, const img::Color &lineColor);
 
+    Line2D(const Point2D &pointA, const Point2D &pointB, double z1, double z2, const img::Color &color);
+
     Point2D pointA;
     Point2D pointB;
+    double z1;
+    double z2;
+
     img::Color color;
 
     void scaleLine(const double& factor);
