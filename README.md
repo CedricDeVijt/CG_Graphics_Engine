@@ -13,27 +13,17 @@ Set the working directory to the directory with the .ini files what you want to 
 
 ## Features
 
--[x] 2D L-Systemen
-
--[x] 3D Lijntekeningen
-
--[x] 3D Lichamen
-
--[ ] Z-Buffering met lijnen
-
--[ ] Z-Buffering met driehoeken
-
--[ ] 3D Fractalen
-
--[ ] Clipping
-
--[ ] Belichting
-
--[ ] Schaduw
-
--[ ] Texture mapping
-
--[ ] 3D Lijntekeningen met bollen & cilinders
+- [x] 2D L-Systemen
+- [x] 3D Lijntekeningen
+- [x] 3D Lichamen
+- [ ] Z-Buffering met lijnen
+- [ ] Z-Buffering met driehoeken
+- [ ] 3D Fractalen
+- [ ] Clipping
+- [ ] Belichting
+- [ ] Schaduw
+- [ ] Texture mapping
+- [ ] 3D Lijntekeningen met bollen & cilinders
 
 ## Known issues or limitations
 
