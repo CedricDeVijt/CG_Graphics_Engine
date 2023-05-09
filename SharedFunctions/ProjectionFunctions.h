@@ -9,10 +9,6 @@ class ProjectionFunctions {
 public:
     static Point2D doProjection(const Vector3D &point, double d);
     static Lines2D doProjection(const Figures3D &figures);
-
-    // Z-Buffering
-    static Lines2D doZBufferProjection(const Figures3D &figures);
-
 };
 
 
