@@ -12,7 +12,7 @@ img::EasyImage LSystem2DParser::parse2DLSystem(const ini::Configuration &configu
     std::vector<int> backgroundcolor = configuration["General"]["backgroundcolor"].as_int_tuple_or_die();
     std::string inputfile = configuration["2DLSystem"]["inputfile"].as_string_or_die();
     std::vector<double> color = configuration["2DLSystem"]["color"].as_double_tuple_or_die();
-    img::Color lineColor(color[0]*255,color[1]*255,color[2]*255);
+    img::Color lineColor(color[0] * 255, color[1] * 255, color[2] * 255);
 
     // get LSystem2D from .2DL file
     LParser::LSystem2D parsedSystem = getLSystem2D(inputfile);
@@ -28,9 +28,9 @@ img::EasyImage LSystem2DParser::parse2DLSystem(const ini::Configuration &configu
     std::vector<int> imageSize = ImageSize::getImageSize(lines, size, x_min, x_max, y_min, y_max);
 
     // make new image
-    img::EasyImage image = img::EasyImage(imageSize[0], imageSize[1], img::Color(backgroundcolor[0]*255,
-                                                                  backgroundcolor[1]*255,
-                                                                  backgroundcolor[2]*255));
+    img::EasyImage image = img::EasyImage(imageSize[0], imageSize[1], img::Color(backgroundcolor[0] * 255,
+                                                                                 backgroundcolor[1] * 255,
+                                                                                 backgroundcolor[2] * 255));
 
     // scale and move all lines so they fit on image
     ScaleLines::scale2DLines(lines, imageSize, x_min, x_max, y_min, y_max);
@@ -54,14 +54,14 @@ std::string LSystem2DParser::getString(const LParser::LSystem2D &parseSystem) {
     std::string oldString = parseSystem.get_initiator();
     std::string newString;
 
-    if (parseSystem.get_nr_iterations() == 0){
+    if (parseSystem.get_nr_iterations() == 0) {
         return oldString;
     }
 
     for (int i = 0; i < parseSystem.get_nr_iterations(); ++i) {
         newString = "";
         for (char c: oldString) {
-            if (parseSystem.get_alphabet().find(c) != parseSystem.get_alphabet().end()){
+            if (parseSystem.get_alphabet().find(c) != parseSystem.get_alphabet().end()) {
                 newString += parseSystem.get_replacement(c);
             } else {
                 newString += c;
@@ -81,28 +81,28 @@ Lines2D LSystem2DParser::get2DLines(const LParser::LSystem2D &parsedSystem, cons
     std::vector<std::vector<double>> bracket_stack = {};
 
     // get current angle in degrees
-    double current_angle = parsedSystem.get_starting_angle() * M_PI /180;
-    double angle_component = parsedSystem.get_angle() * M_PI /180;
+    double current_angle = parsedSystem.get_starting_angle() * M_PI / 180;
+    double angle_component = parsedSystem.get_angle() * M_PI / 180;
 
     // set initial position to (0,0)
-    Point2D current_position(0,0);
-    Point2D previous_position(0,0);
+    Point2D current_position(0, 0);
+    Point2D previous_position(0, 0);
 
     // loop over every char in string
-    for (char c : systemString){
-        if (c == '+'){
+    for (char c: systemString) {
+        if (c == '+') {
             // if + -> increase angle
             current_angle += angle_component;
             continue;
-        } else if (c == '-'){
+        } else if (c == '-') {
             // if - -> decrease angle
             current_angle -= angle_component;
             continue;
-        } else if (c == '('){
+        } else if (c == '(') {
             // if [ -> save current location to stack
             bracket_stack.push_back({current_position.x, current_position.y, current_angle});
             continue;
-        } else if (c == ')'){
+        } else if (c == ')') {
             // if ] -> set current location to last stack value
             current_position = Point2D(bracket_stack.back()[0], bracket_stack.back()[1]);
             current_angle = bracket_stack.back()[2];
@@ -116,12 +116,11 @@ Lines2D LSystem2DParser::get2DLines(const LParser::LSystem2D &parsedSystem, cons
             current_position.move_with_offset(cos(current_angle), sin(current_angle));
 
             // check if char means to draw a line
-            if (parsedSystem.draw(c)){
+            if (parsedSystem.draw(c)) {
                 // Add line from old position to new position to list
                 Line2D newLine(previous_position, current_position, lineColor);
                 lines.push_back(newLine);
             }
-
         }
     }
 

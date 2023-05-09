@@ -9,7 +9,7 @@ As input the program gets ini files, the program will parse the files and output
 
 ## Installation instructions
 
-Set the working directory to the directory with the .ini files what you want to convert to BMP files.
+Set the working directory to the directory with the .ini files that you want to convert to BMP files.
 
 ## Features
 
