@@ -16,7 +16,7 @@ Set the working directory to the directory with the .ini files that you want to 
 - [x] 2D L-Systemen
 - [x] 3D Lijntekeningen
 - [x] 3D Lichamen
-- [ ] Z-Buffering met lijnen
+- [x] Z-Buffering met lijnen
 - [ ] Z-Buffering met driehoeken
 - [ ] 3D Fractalen
 - [ ] Clipping

@@ -19,6 +19,7 @@ img::EasyImage generate_image(const ini::Configuration &configuration) {
         return WireframeParser::parseWireframe(configuration);
     } else if (type == "ZBufferedWireframe") {
         return ZBufferedWireframeParser::parseZBufferedWireframe(configuration);
+    } else if (type == "z_buffering001.ini") {
     }
     return {};
 }
