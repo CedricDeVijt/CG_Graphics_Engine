@@ -20,6 +20,7 @@ Set the working directory to the directory with the .ini files that you want to 
 - [ ] Z-Buffering met driehoeken
 - [ ] 3D Fractalen
 - [ ] Clipping
+---
 - [ ] Belichting
 - [ ] Schaduw
 - [ ] Texture mapping

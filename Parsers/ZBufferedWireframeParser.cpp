@@ -18,7 +18,7 @@ img::EasyImage ZBufferedWireframeParser::parseZBufferedWireframe(const ini::Conf
     Figures3D figures = WireframeFigureParser::parseWireframeFigures(configuration, eye, nrFigures);
 
     // Project lines of all figures
-    Lines2D lines = ProjectionFunctions::doZBufferProjection(figures);
+    Lines2D lines = ProjectionFunctions::doProjection(figures);
 
     // Calculate image size
     double x_max, y_max, x_min, y_min;

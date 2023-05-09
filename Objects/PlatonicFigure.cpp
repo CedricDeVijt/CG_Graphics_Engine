@@ -1,5 +1,5 @@
 #include "PlatonicFigure.h"
-#include "../SharedFunctions/SplitTriangleFaces.h"
+#include "../SharedFunctions/TriangulateFace.h"
 
 Figure3D PlatonicFigure::createCube(const std::vector<double> &rotations, const double &scale, const Vector3D &center,
                                     const img::Color &color) {
@@ -220,7 +220,7 @@ Figure3D PlatonicFigure::createSphere(const std::vector<double> &rotations, cons
         Figure3D icosahedron = createIcosahedron({0, 0, 0}, 1, Vector3D::vector(0, 0, 0), color);
 
         // Split icosahedron n-times
-        std::pair<std::vector<Face3D>, std::vector<Vector3D>> splitFaces = SplitTriangleFaces::splitFaces(icosahedron.faces, icosahedron.points, n);
+        std::pair<std::vector<Face3D>, std::vector<Vector3D>> splitFaces = TriangulateFace::splitFaces(icosahedron.faces, icosahedron.points, n);
 
         // Normalize points
         for (Vector3D &point : splitFaces.second){

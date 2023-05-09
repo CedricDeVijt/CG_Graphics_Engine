@@ -5,7 +5,7 @@
 #include "../BaseFiles/l_parser.h"
 #include "../Objects/Line2D.h"
 #include "../SharedFunctions/LSystemFunctions.h"
-#include "../SharedFunctions/SplitTriangleFaces.h"
+#include "../SharedFunctions/TriangulateFace.h"
 #include "../Objects/TransformationMatrix.h"
 #include "../Objects/PlatonicFigure.h"
 
