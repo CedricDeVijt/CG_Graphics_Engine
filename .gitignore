@@ -1,5 +1,6 @@
 /cmake-build-debug-coverage/
 /cmake-build-debug/
+/.idea/
 
 # git ls-files --others --exclude-from=.git/info/exclude
 # Lines that start with '#' are comments.
