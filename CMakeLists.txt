@@ -58,8 +58,8 @@ set(engine_sources
 		SharedFunctions/DrawLines.h
 		SharedFunctions/LSystemFunctions.cpp
 		SharedFunctions/LSystemFunctions.h
-		SharedFunctions/SplitTriangleFaces.cpp
-		SharedFunctions/SplitTriangleFaces.h
+		SharedFunctions/TriangulateFace.cpp
+		SharedFunctions/TriangulateFace.h
         Parsers/ZBufferParser.cpp Parsers/ZBufferParser.h Objects/PlatonicFigure.cpp Objects/PlatonicFigure.h)
 
 ############################################################

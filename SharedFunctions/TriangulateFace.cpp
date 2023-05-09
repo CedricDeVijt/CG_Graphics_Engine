@@ -1,6 +1,6 @@
-#include "SplitTriangleFaces.h"
+#include "TriangulateFace.h"
 
-std::pair<std::vector<Face3D>, std::vector<Vector3D>> SplitTriangleFaces::splitFaces(const std::vector<Face3D> &faces, const std::vector<Vector3D> &points, const int &splitAmount) {
+std::pair<std::vector<Face3D>, std::vector<Vector3D>> TriangulateFace::splitFaces(const std::vector<Face3D> &faces, const std::vector<Vector3D> &points, const int &splitAmount) {
     std::vector<Face3D> splitFaces = faces;
     std::vector<Vector3D> splitPoints = points;
 
@@ -47,4 +47,8 @@ std::pair<std::vector<Face3D>, std::vector<Vector3D>> SplitTriangleFaces::splitF
         splitFaces = newFaces;
     }
     return {splitFaces, splitPoints};
+}
+
+void TriangulateFace::triangulateFigures(Figures3D &figures) {
+
 }
