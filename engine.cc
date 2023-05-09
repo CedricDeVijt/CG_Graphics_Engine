@@ -4,6 +4,7 @@
 #include "Parsers/WireframeParser.h"
 #include "Parsers/LSystem2DParser.h"
 #include "Parsers/ZBufferedWireframeParser.h"
+#include "Parsers/ZBufferParser.h"
 
 #include <fstream>
 #include <iostream>
@@ -19,7 +20,8 @@ img::EasyImage generate_image(const ini::Configuration &configuration) {
         return WireframeParser::parseWireframe(configuration);
     } else if (type == "ZBufferedWireframe") {
         return ZBufferedWireframeParser::parseZBufferedWireframe(configuration);
-    } else if (type == "z_buffering001.ini") {
+    } else if (type == "ZBuffering") {
+        ZBufferParser::parseZBuffer(configuration);
     }
     return {};
 }

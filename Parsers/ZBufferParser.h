@@ -6,6 +6,7 @@
 #include "../BaseFiles/easy_image.h"
 
 class ZBufferParser {
+public:
     static img::EasyImage parseZBuffer(const ini::Configuration &configuration);
 
 };

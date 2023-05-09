@@ -60,7 +60,7 @@ set(engine_sources
 		SharedFunctions/LSystemFunctions.h
 		SharedFunctions/SplitTriangleFaces.cpp
 		SharedFunctions/SplitTriangleFaces.h
-        Parsers/ZBufferParser.cpp Parsers/ZBufferParser.h)
+        Parsers/ZBufferParser.cpp Parsers/ZBufferParser.h Objects/PlatonicFigure.cpp Objects/PlatonicFigure.h)
 
 ############################################################
 # Create an executable
