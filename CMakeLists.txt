@@ -54,8 +54,8 @@ set(engine_sources
 		SharedFunctions/ImageSize.h
 		SharedFunctions/ScaleLines.cpp
 		SharedFunctions/ScaleLines.h
-		SharedFunctions/DrawLines.cpp
-		SharedFunctions/DrawLines.h
+        SharedFunctions/ImageDrawer.cpp
+        SharedFunctions/ImageDrawer.h
 		SharedFunctions/LSystemFunctions.cpp
 		SharedFunctions/LSystemFunctions.h
 		SharedFunctions/TriangulateFace.cpp

@@ -1,14 +1,14 @@
 #include <sstream>
-#include "DrawLines.h"
+#include "ImageDrawer.h"
 
-void DrawLines::draw2DLines(img::EasyImage &image, const Lines2D &lines) {
+void ImageDrawer::draw2DLines(img::EasyImage &image, const Lines2D &lines) {
     for (const Line2D &line: lines) {
         image.draw_line(lround(line.pointA.x), lround(line.pointA.y), lround(line.pointB.x), lround(line.pointB.y),
                         line.color);
     }
 }
 
-void DrawLines::drawZBuffer2DLines(img::EasyImage &image, const Lines2D &lines) {
+void ImageDrawer::drawZBuffer2DLines(img::EasyImage &image, const Lines2D &lines) {
     ZBuffer zBuffer(image.get_width(), image.get_height());
 
     for (const Line2D &line: lines) {
@@ -18,9 +18,9 @@ void DrawLines::drawZBuffer2DLines(img::EasyImage &image, const Lines2D &lines) 
 
 }
 
-void DrawLines::draw_zbuf_line(ZBuffer &zbuffer, img::EasyImage &image, unsigned int x0, unsigned int y0,
-                               unsigned int z0, unsigned int x1, unsigned int y1,
-                               unsigned int z1, img::Color color) {
+void ImageDrawer::draw_zbuf_line(ZBuffer &zbuffer, img::EasyImage &image, unsigned int x0, unsigned int y0,
+                                 unsigned int z0, unsigned int x1, unsigned int y1,
+                                 unsigned int z1, img::Color color) {
     // Check if the line is within the boundaries of the image
     if (x0 >= image.get_width() || y0 >= image.get_height() || x1 >= image.get_width() || y1 > image.get_height()) {
         std::stringstream ss;

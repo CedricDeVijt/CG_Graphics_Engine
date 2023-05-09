@@ -1,7 +1,7 @@
 #include "LSystem2DParser.h"
 #include "../SharedFunctions/ImageSize.h"
 #include "../SharedFunctions/ScaleLines.h"
-#include "../SharedFunctions/DrawLines.h"
+#include "../SharedFunctions/ImageDrawer.h"
 #include <fstream>
 #include <cmath>
 
@@ -36,7 +36,7 @@ img::EasyImage LSystem2DParser::parse2DLSystem(const ini::Configuration &configu
     ScaleLines::scale2DLines(lines, imageSize, x_min, x_max, y_min, y_max);
 
     // draw all lines on image
-    DrawLines::draw2DLines(image, lines);
+    ImageDrawer::draw2DLines(image, lines);
 
     return image;
 }
