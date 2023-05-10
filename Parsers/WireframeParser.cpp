@@ -3,7 +3,7 @@
 
 #include "../Objects/Line2D.h"
 #include "../Objects/TransformationMatrix.h"
-#include "../SharedFunctions/DrawLines.h"
+#include "../SharedFunctions/ImageDrawer.h"
 #include "../SharedFunctions/ImageSize.h"
 #include "../SharedFunctions/ProjectionFunctions.h"
 #include "../SharedFunctions/ScaleLines.h"
@@ -36,7 +36,7 @@ img::EasyImage WireframeParser::parseWireframe(const ini::Configuration &configu
     ScaleLines::scale2DLines(lines, imageSize, x_min, x_max, y_min, y_max);
 
     // Draw lines on image
-    DrawLines::draw2DLines(image, lines);
+    ImageDrawer::draw2DLines(image, lines);
 
     return image;
 }

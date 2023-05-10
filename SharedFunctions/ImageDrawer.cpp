@@ -19,8 +19,7 @@ void ImageDrawer::drawZBuffer2DLines(img::EasyImage &image, const Lines2D &lines
 }
 
 void ImageDrawer::draw_zbuf_line(ZBuffer &zbuffer, img::EasyImage &image, unsigned int x0, unsigned int y0,
-                                 unsigned int z0, unsigned int x1, unsigned int y1,
-                                 unsigned int z1, img::Color color) {
+                                 unsigned int z0, unsigned int x1, unsigned int y1, unsigned int z1, img::Color color) {
     // Check if the line is within the boundaries of the image
     if (x0 >= image.get_width() || y0 >= image.get_height() || x1 >= image.get_width() || y1 > image.get_height()) {
         std::stringstream ss;
@@ -62,7 +61,7 @@ void ImageDrawer::draw_zbuf_line(ZBuffer &zbuffer, img::EasyImage &image, unsign
             // Check if the slope is greater than 1
             for (unsigned int i = 0; i <= (y1 - y0); i++) {
                 // Calculate the x-coordinate of the point on the line for a given y-coordinate (using x = (y - b)/m)
-                if (zbuffer.isCloser(x0, y0, z0, x1, y1, z1,  (unsigned int) round(x0 + (i / m)), y0 + i)) {
+                if (zbuffer.isCloser(x0, y0, z0, x1, y1, z1, (unsigned int) round(x0 + (i / m)), y0 + i)) {
                     (image)((unsigned int) round(x0 + (i / m)), y0 + i) = color;
                 }
             }
@@ -76,4 +75,36 @@ void ImageDrawer::draw_zbuf_line(ZBuffer &zbuffer, img::EasyImage &image, unsign
             }
         }
     }
+}
+
+void ImageDrawer::drawTriangulatedFigures(img::EasyImage &image, const Figures3D &figures, const double &x_min,
+                                          const double &x_max, const double &y_min, const double &y_max) {
+    ZBuffer zBuffer((int) image.get_width(), (int) image.get_height());
+
+    for (auto figure: figures) {
+        double DCx = (figure.getScale() * (x_min + x_max)) / 2;
+        double DCy = (figure.getScale() * (y_min + y_max)) / 2;
+
+        double dx = (image.get_width() / 2) - DCx;
+        double dy = (image.get_height() / 2) - DCy;
+
+        for (auto face: figure.faces) {
+            auto faceCenter = (figure.points[face.point_indexes[0]]
+                               + figure.points[face.point_indexes[1]]
+                               + figure.points[face.point_indexes[2]]) / 3;
+
+            draw_zbuf_triag(zBuffer, image,
+                            figure.points[face.point_indexes[0]],
+                            figure.points[face.point_indexes[1]],
+                            figure.points[face.point_indexes[2]],
+                            faceCenter.length(), dx, dy, figure.getColor());
+        }
+    }
+}
+
+void ImageDrawer::draw_zbuf_triag(ZBuffer &zBuffer, img::EasyImage &image, const Vector3D &A, const Vector3D &B,
+                                  const Vector3D &C, double d, double dx, double dy, img::Color color) {
+    // project point to 2D
+
+
 }

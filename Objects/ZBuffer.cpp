@@ -14,15 +14,6 @@ bool ZBuffer::isCloser(unsigned int x0, unsigned int y0, unsigned int z0, unsign
     } else {
         return false;
     }
-//    double zBufferValue = zBuffer[xi][yi];
-//    double zValue = round(((xi-x0)/(x1-x0)*(z1-z0) +z0));
-//
-//    if (zValue < zBufferValue){
-//        zBufferValue = zValue;
-//        return true;
-//    } else {
-//        return false;
-//    }
 }
 
 double ZBuffer::interpolate(double z0, double z1, unsigned int x0, unsigned int y0, unsigned int x1, unsigned int y1, unsigned int xi, unsigned int yi) {
