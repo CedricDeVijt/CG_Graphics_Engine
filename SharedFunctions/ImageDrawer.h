@@ -18,7 +18,7 @@ public:
                                unsigned int y1, unsigned int z1, img::Color color);
 
     // Z-buffering with triangles
-    static void drawTriangulatedFigures(Figures3D figures);
+    static void drawTriangulatedFigures(img::EasyImage &image, const Figures3D& figures);
     static void draw_zbuf_triag(ZBuffer &zBuffer, img::EasyImage &image, Vector3D const& A, Vector3D const& B, Vector3D const& C, double d, double dx, double dy, img::Color color);
 };
 

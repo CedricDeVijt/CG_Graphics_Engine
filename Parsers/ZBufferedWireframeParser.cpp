@@ -4,7 +4,7 @@
 #include "../SharedFunctions/ProjectionFunctions.h"
 #include "../SharedFunctions/ImageSize.h"
 #include "../SharedFunctions/ScaleLines.h"
-#include "../SharedFunctions/DrawLines.h"
+#include "../SharedFunctions/ImageDrawer.h"
 
 img::EasyImage ZBufferedWireframeParser::parseZBufferedWireframe(const ini::Configuration &configuration) {
     // Get data from configuration
@@ -34,7 +34,7 @@ img::EasyImage ZBufferedWireframeParser::parseZBufferedWireframe(const ini::Conf
     ScaleLines::scale2DLines(lines, imageSize, x_min, x_max, y_min, y_max);
 
     // Draw lines on image
-    DrawLines::drawZBuffer2DLines(image, lines);
+    ImageDrawer::drawZBuffer2DLines(image, lines);
 
     return image;
 }
