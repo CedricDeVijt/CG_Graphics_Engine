@@ -50,5 +50,18 @@ std::pair<std::vector<Face3D>, std::vector<Vector3D>> TriangulateFace::splitFace
 }
 
 void TriangulateFace::triangulateFigures(Figures3D &figures) {
-
+    for (auto &figure : figures){
+        std::vector<Face3D> newFaces;
+        for (Face3D face : figure.faces){
+            if (face.point_indexes.size() <= 3){
+                newFaces.push_back(face);
+                continue;
+            }
+            std::cout << face.point_indexes.size() << std::endl;
+            for (int i = 0; i < face.point_indexes.size()-2; ++i) {
+                newFaces.push_back(Face3D({face.point_indexes[0], face.point_indexes[i+1], face.point_indexes[i+2]}));
+            }
+        }
+        figure.faces = newFaces;
+    }
 }
