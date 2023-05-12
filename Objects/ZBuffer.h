@@ -11,6 +11,7 @@ public:
 
     bool isCloser(unsigned int x0, unsigned int y0, unsigned int z0, unsigned int x1, unsigned int y1, unsigned int z1,
              unsigned int xi, unsigned int yi);
+    bool isCloser(int x, int y, double zvalue);
 
 private:
     double interpolate(double z0, double z1, unsigned int x0, unsigned int y0, unsigned int x1, unsigned int y1, unsigned int xi, unsigned int yi);

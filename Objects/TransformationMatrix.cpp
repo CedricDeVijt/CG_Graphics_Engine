@@ -77,14 +77,23 @@ Matrix TransformationMatrix::eyePointTransformation(const Vector3D &eyepoint) {
 
 Matrix
 TransformationMatrix::linedrawing3DTransformation(const double &scale, const double &angleX, const double &angleY,
-                                                  const double &angleZ, const Vector3D &vector, Vector3D eye) {
-
+                                                  const double &angleZ, const Vector3D &center, const Vector3D& eye) {
     Matrix matrix = TransformationMatrix::scaleFigure(scale)
             * TransformationMatrix::rotateX(angleX)
             * TransformationMatrix::rotateY(angleY)
             * TransformationMatrix::rotateZ(angleZ)
-            * TransformationMatrix::translateFigure(vector)
+            * TransformationMatrix::translateFigure(center)
             * TransformationMatrix::eyePointTransformation(eye);
+    return matrix;
+}
+
+Matrix TransformationMatrix::ZBufferTransformation(const double &scale, const double &angleX, const double &angleY,
+                                                   const double &angleZ, const Vector3D &center, Vector3D eye) {
+    Matrix matrix = TransformationMatrix::scaleFigure(scale)
+                    * TransformationMatrix::rotateX(angleX)
+                    * TransformationMatrix::rotateY(angleY)
+                    * TransformationMatrix::rotateZ(angleZ)
+                    * TransformationMatrix::eyePointTransformation(eye);
     return matrix;
 }
 

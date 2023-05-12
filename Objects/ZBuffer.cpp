@@ -26,3 +26,13 @@ double ZBuffer::interpolate(double z0, double z1, unsigned int x0, unsigned int 
     double interp_z = z0 + (delta_x*dx + delta_y*dy) / dist * dz;
     return interp_z;
 }
+
+bool ZBuffer::isCloser(int x, int y, double zvalue) {
+    if (x >= 0 && x < this->size() && y >= 0 && y < (*this)[0].size()) {
+        if (zvalue < (*this)[x][y]) {
+            (*this)[x][y] = zvalue;
+            return true;
+        }
+    }
+    return false;
+}

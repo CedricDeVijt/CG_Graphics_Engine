@@ -57,7 +57,6 @@ void TriangulateFace::triangulateFigures(Figures3D &figures) {
                 newFaces.push_back(face);
                 continue;
             }
-            std::cout << face.point_indexes.size() << std::endl;
             for (int i = 0; i < face.point_indexes.size()-2; ++i) {
                 newFaces.push_back(Face3D({face.point_indexes[0], face.point_indexes[i+1], face.point_indexes[i+2]}));
             }
