@@ -1,7 +1,8 @@
 #include "ZBufferParser.h"
-#include "WireframeFigureParser.h"
+#include "FigureParser.h"
 
 #include "../Objects/Line2D.h"
+#include "../Objects/TransformationMatrix.h"
 
 #include "../SharedFunctions/ProjectionFunctions.h"
 #include "../SharedFunctions/ImageSize.h"
@@ -17,21 +18,21 @@ img::EasyImage ZBufferParser::parseZBuffer(const ini::Configuration &configurati
     Vector3D eye = Vector3D::vector(eyeTuple[0], eyeTuple[1], eyeTuple[2]);
 
     // Get all figures from configuration
-    Figures3D figures = WireframeFigureParser::parseWireframeFigures(configuration, eye, nrFigures);
-
-    // Split faces in triangles
-    TriangulateFace::triangulateFigures(figures);
+    Figures3D figures = FigureParser::parseWireframeFigures(configuration, eye, nrFigures);
 
     // Calculate image size
     double x_max, y_max, x_min, y_min;
     Lines2D imageSizeLines = ProjectionFunctions::doProjection(figures);
     std::vector<int> imageSize = ImageSize::getImageSize(imageSizeLines, size, x_min, x_max, y_min, y_max);
 
-    // Make image
+    // Create image
     img::EasyImage image = img::EasyImage(imageSize[0], imageSize[1],
                                           img::Color(backgroundcolor[0] * 255,
                                                      backgroundcolor[1] * 255,
                                                      backgroundcolor[2] * 255));
+
+    // Split faces in triangles
+    TriangulateFace::triangulateFigures(figures);
 
     // Draw figures on image
     ImageDrawer::drawTriangulatedFigures(image, figures, x_min, x_max, y_min, y_max);

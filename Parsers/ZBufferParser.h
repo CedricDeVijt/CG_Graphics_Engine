@@ -4,11 +4,11 @@
 
 #include "../BaseFiles/ini_configuration.h"
 #include "../BaseFiles/easy_image.h"
+#include "../Objects/Figure3D.h"
 
 class ZBufferParser {
 public:
     static img::EasyImage parseZBuffer(const ini::Configuration &configuration);
-
 };
 
 

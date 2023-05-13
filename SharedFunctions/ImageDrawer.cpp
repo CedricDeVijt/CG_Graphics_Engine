@@ -113,7 +113,7 @@ void ImageDrawer::drawTriangulatedFigures(img::EasyImage &image, const Figures3D
 
 void ImageDrawer::draw_zbuf_triag(ZBuffer &zBuffer, img::EasyImage &image, const Vector3D &A, const Vector3D &B,
                                   const Vector3D &C, double d, double dx, double dy, img::Color color) {
-    // Project the three points onto the screen and store them as Point2D objects
+    // Project the three points to Point2D's
     Point2D A_proj(d * A.x / (-A.z) + dx, d * A.y / (-A.z) + dy);
     Point2D B_proj(d * B.x / (-B.z) + dx, d * B.y / (-B.z) + dy);
     Point2D C_proj(d * C.x / (-C.z) + dx, d * C.y / (-C.z) + dy);
@@ -123,9 +123,9 @@ void ImageDrawer::draw_zbuf_triag(ZBuffer &zBuffer, img::EasyImage &image, const
     int y_max = round(std::max({A_proj.y, B_proj.y, C_proj.y}) - 0.5);
 
     // Calculate the coordinates of the centroid and the reciprocal of the depth of the centroid
-    double xg = (A_proj.x + B_proj.x + C_proj.x) / 3;
-    double yg = (A_proj.y + B_proj.y + C_proj.y) / 3;
-    double oneOverZg = 1 / (3 * A.z) + 1 / (3 * B.z) + 1 / (3 * C.z);
+    double xG = (A_proj.x + B_proj.x + C_proj.x) / 3;
+    double yG = (A_proj.y + B_proj.y + C_proj.y) / 3;
+    double oneOverZG = 1 / (3 * A.z) + 1 / (3 * B.z) + 1 / (3 * C.z);
 
     // Loop through each row of the triangle
     for (int y = y_min; y <= y_max; ++y) {
@@ -159,19 +159,21 @@ void ImageDrawer::draw_zbuf_triag(ZBuffer &zBuffer, img::EasyImage &image, const
         for (int x = xL; x <= xR; ++x) {
             Vector3D u = B - A;
             Vector3D v = C - A;
-            Vector3D w = Vector3D::point(u.y * v.z - u.z * v.y, u.z * v.x - u.x * v.z, u.x * v.y - u.y * v.x);
+            Vector3D w = Vector3D::point(u.y * v.z - u.z * v.y,
+                                         u.z * v.x - u.x * v.z,
+                                         u.x * v.y - u.y * v.x);
 
             double k = w.x * A.x + w.y * A.y + w.z * A.z;
 
             double dzdx = w.x / (-d * k);
             double dzdy = w.y / (-d * k);
 
-            double oneOverZ = 1.0001 * oneOverZg + (x - xg) * dzdx + (y - yg) * dzdy;
+            double oneOverZ = 1.0001 * oneOverZG + (x - xG) * dzdx + (y - yG) * dzdy;
 
-//            if (zBuffer.isCloser(x, y, oneOverZ)) {
-//                (image)(x, y) = color;
-//            }
-            (image)(x, y) = color;
+            if (zBuffer.isCloser(x, y, oneOverZ)) {
+                (image)(x, y) = color;
+            }
+//            (image)(x, y) = color;
         }
     }
 }

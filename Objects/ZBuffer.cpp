@@ -28,9 +28,9 @@ double ZBuffer::interpolate(double z0, double z1, unsigned int x0, unsigned int 
 }
 
 bool ZBuffer::isCloser(int x, int y, double zvalue) {
-    if (x >= 0 && x < this->size() && y >= 0 && y < (*this)[0].size()) {
-        if (zvalue < (*this)[x][y]) {
-            (*this)[x][y] = zvalue;
+    if (x >= 0 && x < zBuffer.size() && y >= 0 && y < zBuffer[0].size()) {
+        if (zvalue < zBuffer[x][y]) {
+            zBuffer[x][y] = zvalue;
             return true;
         }
     }

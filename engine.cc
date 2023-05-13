@@ -16,7 +16,7 @@ img::EasyImage generate_image(const ini::Configuration &configuration) {
 
     if (type == "2DLSystem") {
         return LSystem2DParser::parse2DLSystem(configuration);
-    } else if (type == "Wireframe") {
+    } else if (type == "Wireframe" || type == "BuckyBall" || type == "MengerSponge") {
         return WireframeParser::parseWireframe(configuration);
     } else if (type == "ZBufferedWireframe") {
         return ZBufferedWireframeParser::parseZBufferedWireframe(configuration);

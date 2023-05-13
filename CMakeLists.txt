@@ -43,10 +43,10 @@ set(engine_sources
 		Parsers/ZBufferedWireframeParser.h
 		Parsers/WireframeParser.cpp
 		Parsers/WireframeParser.h
-		Parsers/WireframeFigureParser.cpp
-		Parsers/WireframeFigureParser.h
-		Parsers/WireframeFigureParser.cpp
-		Parsers/WireframeFigureParser.h
+        Parsers/FigureParser.cpp
+        Parsers/FigureParser.h
+        Parsers/FigureParser.cpp
+        Parsers/FigureParser.h
 
         SharedFunctions/ProjectionFunctions.cpp
 		SharedFunctions/ProjectionFunctions.h
@@ -60,7 +60,7 @@ set(engine_sources
 		SharedFunctions/LSystemFunctions.h
 		SharedFunctions/TriangulateFace.cpp
 		SharedFunctions/TriangulateFace.h
-        Parsers/ZBufferParser.cpp Parsers/ZBufferParser.h Objects/PlatonicFigure.cpp Objects/PlatonicFigure.h)
+        Parsers/ZBufferParser.cpp Parsers/ZBufferParser.h Objects/PlatonicFigure.cpp Objects/PlatonicFigure.h SharedFunctions/FigureFractaliser.cpp SharedFunctions/FigureFractaliser.h)
 
 ############################################################
 # Create an executable

@@ -1,5 +1,5 @@
 #include "ZBufferedWireframeParser.h"
-#include "WireframeFigureParser.h"
+#include "FigureParser.h"
 #include "../Objects/Line2D.h"
 #include "../SharedFunctions/ProjectionFunctions.h"
 #include "../SharedFunctions/ImageSize.h"
@@ -15,7 +15,7 @@ img::EasyImage ZBufferedWireframeParser::parseZBufferedWireframe(const ini::Conf
     Vector3D eye = Vector3D::vector(eyeTuple[0], eyeTuple[1], eyeTuple[2]);
 
     // Get all figures from configuration
-    Figures3D figures = WireframeFigureParser::parseWireframeFigures(configuration, eye, nrFigures);
+    Figures3D figures = FigureParser::parseWireframeFigures(configuration, eye, nrFigures);
 
     // Project lines of all figures
     Lines2D lines = ProjectionFunctions::doProjection(figures);
