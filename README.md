@@ -19,8 +19,8 @@ Set the working directory to the directory with the .ini files that you want to 
 - [x] Z-Buffering met lijnen
 - [ ] Z-Buffering met driehoeken
 - [ ] 3D Fractalen
-- [ ] Clipping
 ---
+- [ ] Clipping
 - [ ] Belichting
 - [ ] Schaduw
 - [ ] Texture mapping
