@@ -173,7 +173,6 @@ void ImageDrawer::draw_zbuf_triag(ZBuffer &zBuffer, img::EasyImage &image, const
             if (zBuffer.isCloser(x, y, oneOverZ)) {
                 (image)(x, y) = color;
             }
-//            (image)(x, y) = color;
         }
     }
 }

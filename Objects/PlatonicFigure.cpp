@@ -1,3 +1,4 @@
+#include <numeric>
 #include "PlatonicFigure.h"
 #include "../SharedFunctions/TriangulateFace.h"
 
@@ -116,7 +117,6 @@ PlatonicFigure::createIcosahedron(const std::vector<double> &rotations, const do
     faces.emplace_back(Face3D({11, 6, 10}));
 
 
-
     return {faces, points, rotations, scale, center, color};
 }
 
@@ -128,7 +128,7 @@ PlatonicFigure::createDodecahedron(const std::vector<double> &rotations, const d
 
     // Points
     Figure3D icosahedron = createIcosahedron({0, 0, 0}, 1, Vector3D::vector(0, 0, 0), color);
-    for (const Face3D &face : icosahedron.faces){
+    for (const Face3D &face: icosahedron.faces) {
         double x = (icosahedron.points[face.point_indexes[0]].x +
                     icosahedron.points[face.point_indexes[1]].x +
                     icosahedron.points[face.point_indexes[2]].x) / 3;
@@ -175,13 +175,13 @@ PlatonicFigure::createCylinder(const std::vector<double> &rotations, const doubl
 
     // Faces
     for (int i = 0; i < n; ++i) {
-        faces.push_back(Face3D({2*i, 2*i+1, (2*i+3) % (2*n), (2*i+2) % (2*n)}));
+        faces.push_back(Face3D({2 * i, 2 * i + 1, (2 * i + 3) % (2 * n), (2 * i + 2) % (2 * n)}));
     }
     std::vector<int> topFace;
     std::vector<int> bottomFace;
     for (int i = 0; i < n; ++i) {
-        topFace.push_back(2*i);
-        bottomFace.push_back(2*i+1);
+        topFace.push_back(2 * i);
+        bottomFace.push_back(2 * i + 1);
     }
     faces.emplace_back(topFace);
     faces.emplace_back(bottomFace);
@@ -214,16 +214,17 @@ Figure3D PlatonicFigure::createCone(const std::vector<double> &rotations, const 
 
 Figure3D PlatonicFigure::createSphere(const std::vector<double> &rotations, const double &scale, const Vector3D &center,
                                       const img::Color &color, const int &n) {
-    if (n == 0){
+    if (n == 0) {
         return createIcosahedron(rotations, scale, center, color);
     } else {
         Figure3D icosahedron = createIcosahedron({0, 0, 0}, 1, Vector3D::vector(0, 0, 0), color);
 
         // Split icosahedron n-times
-        std::pair<std::vector<Face3D>, std::vector<Vector3D>> splitFaces = TriangulateFace::splitFaces(icosahedron.faces, icosahedron.points, n);
+        std::pair<std::vector<Face3D>, std::vector<Vector3D>> splitFaces = TriangulateFace::splitFaces(
+                icosahedron.faces, icosahedron.points, n);
 
         // Normalize points
-        for (Vector3D &point : splitFaces.second){
+        for (Vector3D &point: splitFaces.second) {
             point.normalise();
         }
 
@@ -231,9 +232,9 @@ Figure3D PlatonicFigure::createSphere(const std::vector<double> &rotations, cons
     }
 }
 
-Figure3D PlatonicFigure::parseTorus(const std::vector<double> &rotations, const double &scale, const Vector3D &center,
-                                    const img::Color &color, const double &R, const double &r, const int &n,
-                                    const int &m) {
+Figure3D PlatonicFigure::createTorus(const std::vector<double> &rotations, const double &scale, const Vector3D &center,
+                                     const img::Color &color, const double &R, const double &r, const int &n,
+                                     const int &m) {
     std::vector<Face3D> faces;
     std::vector<Vector3D> points;
     // Split tube
@@ -249,10 +250,10 @@ Figure3D PlatonicFigure::parseTorus(const std::vector<double> &rotations, const 
 
             faces.emplace_back(
                     Face3D({
-                                   calculateIndex(i,j,m),
-                                   calculateIndex((i + 1) % n,j,m),
-                                   calculateIndex((i + 1) % n,(j + 1) % m,m),
-                                   calculateIndex(i,(j + 1) % m,m)})
+                                   calculateIndex(i, j, m),
+                                   calculateIndex((i + 1) % n, j, m),
+                                   calculateIndex((i + 1) % n, (j + 1) % m, m),
+                                   calculateIndex(i, (j + 1) % m, m)})
             );
         }
     }
@@ -261,5 +262,30 @@ Figure3D PlatonicFigure::parseTorus(const std::vector<double> &rotations, const 
 }
 
 int PlatonicFigure::calculateIndex(const int &i, const int &j, const int &m) {
-    return i*m+j;
+    return i * m + j;
 }
+
+Figure3D PlatonicFigure::createBuckyBall(const std::vector<double> &rotations, const double &scale, const Vector3D& center, img::Color color) {
+    // Creates a buckyball
+
+    // Points and faces with points of the resulting buckyball
+    std::vector<Face3D> faces;
+    std::vector<Vector3D> points;
+
+    // Buckyball uses icosahedron as base, each face is split up in three triangles and one hexagon
+    Figure3D icosahedron = createIcosahedron({0, 0, 0}, 1, Vector3D::vector(0, 0, 0), color);
+
+    // Split all faces in three triangles and one hexagon
+    for (int i = 0; i < icosahedron.faces.size(); ++i) {
+        // Push new faces and points in faces and points vectors.
+    }
+
+    // Return Figure3D
+    return {faces, points, rotations, scale, center, color};
+}
+
+Figure3D PlatonicFigure::createMengerSponge(const std::vector<double> &rotations, const double &scale, Vector3D center,
+                                            img::Color color) {
+    return {};
+}
+
