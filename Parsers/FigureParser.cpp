@@ -19,18 +19,18 @@ FigureParser::parseWireframeFigures(const ini::Configuration &configuration, Vec
         Figures3D newFigures = FigureParser::parseWireframeFigure(configuration[figureName]);
 
         // Apply transformations to all figures (rotations, translation, scaling and eye point transformation)
-        for (Figure3D figure : newFigures){
-        figure.applyTransformation(TransformationMatrix::linedrawing3DTransformation(figure.getScale(),
-                                                                                     figure.getRotateX() * M_PI /
-                                                                                        180.0,
-                                                                                     figure.getRotateY() * M_PI /
-                                                                                        180.0,
-                                                                                     figure.getRotateZ() * M_PI /
-                                                                                        180.0, figure.getCenter(),
-                                                                                        eye));
+        for (Figure3D figure: newFigures) {
+            figure.applyTransformation(TransformationMatrix::linedrawing3DTransformation(figure.getScale(),
+                                                                                         figure.getRotateX() * M_PI /
+                                                                                         180.0,
+                                                                                         figure.getRotateY() * M_PI /
+                                                                                         180.0,
+                                                                                         figure.getRotateZ() * M_PI /
+                                                                                         180.0, figure.getCenter(),
+                                                                                         eye));
 
-        // Add figure to list
-        figuresList.push_back(figure);
+            // Add figure to list
+            figuresList.push_back(figure);
         }
     }
     return figuresList;
@@ -70,31 +70,31 @@ Figures3D FigureParser::parseWireframeFigure(const ini::Section &figure) {
         Figure3D newFigure = FigureParser::parseLineDrawing(figure, rotations, scale, center, color);
         return {newFigure};
     } else if (type == "3DLSystem") {
-        Figure3D newFigure =  FigureParser::parse3DLSystem(rotations, scale, center, color, inputfile);
+        Figure3D newFigure = FigureParser::parse3DLSystem(rotations, scale, center, color, inputfile);
         return {newFigure};
     } else if (type == "Cube") {
-        Figure3D newFigure =  PlatonicFigure::createCube(rotations, scale, center, color);
+        Figure3D newFigure = PlatonicFigure::createCube(rotations, scale, center, color);
         return {newFigure};
     } else if (type == "Tetrahedron") {
-        Figure3D newFigure =  PlatonicFigure::createTetrahedron(rotations, scale, center, color);
+        Figure3D newFigure = PlatonicFigure::createTetrahedron(rotations, scale, center, color);
         return {newFigure};
     } else if (type == "Octahedron") {
-        Figure3D newFigure =  PlatonicFigure::createOctahedron(rotations, scale, center, color);
+        Figure3D newFigure = PlatonicFigure::createOctahedron(rotations, scale, center, color);
         return {newFigure};
     } else if (type == "Icosahedron") {
-        Figure3D newFigure =  PlatonicFigure::createIcosahedron(rotations, scale, center, color);
+        Figure3D newFigure = PlatonicFigure::createIcosahedron(rotations, scale, center, color);
         return {newFigure};
     } else if (type == "Dodecahedron") {
-        Figure3D newFigure =  PlatonicFigure::createDodecahedron(rotations, scale, center, color);
+        Figure3D newFigure = PlatonicFigure::createDodecahedron(rotations, scale, center, color);
         return {newFigure};
     } else if (type == "Cylinder") {
-        Figure3D newFigure =  PlatonicFigure::createCylinder(rotations, scale, center, color, n, height);
+        Figure3D newFigure = PlatonicFigure::createCylinder(rotations, scale, center, color, n, height);
         return {newFigure};
     } else if (type == "Cone") {
-        Figure3D newFigure =  PlatonicFigure::createCone(rotations, scale, center, color, n, height);
+        Figure3D newFigure = PlatonicFigure::createCone(rotations, scale, center, color, n, height);
         return {newFigure};
     } else if (type == "Sphere") {
-        Figure3D newFigure =  PlatonicFigure::createSphere(rotations, scale, center, color, n);
+        Figure3D newFigure = PlatonicFigure::createSphere(rotations, scale, center, color, n);
         return {newFigure};
     } else if (type == "Torus") {
         Figure3D newFigure = PlatonicFigure::createTorus(rotations, scale, center, color, R, r, n, m);

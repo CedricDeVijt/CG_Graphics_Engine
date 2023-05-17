@@ -1,5 +1,7 @@
-#include <sstream>
+#include <algorithm>
+#include <cmath>
 #include <limits>
+#include <sstream>
 #include "ImageDrawer.h"
 
 void ImageDrawer::draw2DLines(img::EasyImage &image, const Lines2D &lines) {
@@ -83,30 +85,25 @@ void ImageDrawer::drawTriangulatedFigures(img::EasyImage &image, const Figures3D
     // Create a Z-buffer for the image
     ZBuffer zBuffer((int) image.get_width(), (int) image.get_height());
 
+    // Calculate the center of the figure
+    double d = 0.95 * (image.get_width() / (x_max - x_min));
+    double DCx = (d * (x_min + x_max)) / 2;
+    double DCy = (d * (y_min + y_max)) / 2;
+
+    // Calculate the offset from the image center to the figure center
+    double dx = (image.get_width() / 2) - DCx;
+    double dy = (image.get_height() / 2) - DCy;
+
     // Draw each figure on image
     for (Figure3D figure: figures) {
-        // Calculate the center of the figure
-        double scale = figure.getScale();
-        double DCx = (scale * (x_min + x_max)) / 2;
-        double DCy = (scale * (y_min + y_max)) / 2;
-
-        // Calculate the offset from the image center to the figure center
-        double dx = (image.get_width() / 2) - DCx;
-        double dy = (image.get_height() / 2) - DCy;
-
         // Draw each face of the figure on the image
         for (Face3D face: figure.faces) {
-            // Calculate the center of the face
-            auto faceCenter = (figure.points[face.point_indexes[0]]
-                               + figure.points[face.point_indexes[1]]
-                               + figure.points[face.point_indexes[2]]) / 3;
-
             // Draw the face onto the image using the Z-buffer algorithm
             draw_zbuf_triag(zBuffer, image,
                             figure.points[face.point_indexes[0]],
                             figure.points[face.point_indexes[1]],
                             figure.points[face.point_indexes[2]],
-                            faceCenter.length(), dx, dy, figure.getColor());
+                            d, dx, dy, figure.getColor());
         }
     }
 }
@@ -119,8 +116,8 @@ void ImageDrawer::draw_zbuf_triag(ZBuffer &zBuffer, img::EasyImage &image, const
     Point2D C_proj(d * C.x / (-C.z) + dx, d * C.y / (-C.z) + dy);
 
     // Find the minimum and maximum y coordinates of the triangle and round them to integer values
-    int y_min = round(std::min({A_proj.y, B_proj.y, C_proj.y}) + 0.5);
-    int y_max = round(std::max({A_proj.y, B_proj.y, C_proj.y}) - 0.5);
+    int y_min = static_cast<int>(round(std::min({A_proj.y, B_proj.y, C_proj.y}) + 0.5));
+    int y_max = static_cast<int>(round(std::max({A_proj.y, B_proj.y, C_proj.y}) - 0.5));
 
     // Calculate the coordinates of the centroid and the reciprocal of the depth of the centroid
     double xG = (A_proj.x + B_proj.x + C_proj.x) / 3;
@@ -130,31 +127,32 @@ void ImageDrawer::draw_zbuf_triag(ZBuffer &zBuffer, img::EasyImage &image, const
     // Loop through each row of the triangle
     for (int y = y_min; y <= y_max; ++y) {
         // Initialize the left and right x coordinates to infinity and negative infinity, respectively
-        int xLAB = std::numeric_limits<int>::infinity();
-        int xLAC = std::numeric_limits<int>::infinity();
-        int xLBC = std::numeric_limits<int>::infinity();
-        int xRAB = -std::numeric_limits<int>::infinity();
-        int xRAC = -std::numeric_limits<int>::infinity();
-        int xRBC = -std::numeric_limits<int>::infinity();
+        double xLAB = std::numeric_limits<double>::infinity();
+        double xLAC = std::numeric_limits<double>::infinity();
+        double xLBC = std::numeric_limits<double>::infinity();
+        double xRAB = -std::numeric_limits<double>::infinity();
+        double xRAC = -std::numeric_limits<double>::infinity();
+        double xRBC = -std::numeric_limits<double>::infinity();
 
         // Check if the current row intersects each edge of the triangle
         // Calculate the x coordinates where the edge intersects the row and store them as either the left or right x coordinate depending on which side of the triangle the row is on
         if ((y - A_proj.y) * (y - B_proj.y) <= 0 and A_proj.y != B_proj.y) {
-            xLAB = B_proj.x + (A_proj.x - B_proj.x) * (y - B_proj.y) / (A_proj.y - B_proj.y);
+            xLAB = (int) (B_proj.x + (A_proj.x - B_proj.x) * (y - B_proj.y) / (A_proj.y - B_proj.y));
             xRAB = xLAB;
         }
         if ((y - A_proj.y) * (y - C_proj.y) <= 0 and A_proj.y != C_proj.y) {
-            xLAC = C_proj.x + (A_proj.x - C_proj.x) * (y - C_proj.y) / (A_proj.y - C_proj.y);
+            xLAC = (int) (C_proj.x + (A_proj.x - C_proj.x) * (y - C_proj.y) / (A_proj.y - C_proj.y));
             xRAC = xLAC;
         }
+
         if ((y - B_proj.y) * (y - C_proj.y) <= 0 and C_proj.y != B_proj.y) {
-            xLBC = C_proj.x + (B_proj.x - C_proj.x) * (y - C_proj.y) / (B_proj.y - C_proj.y);
+            xLBC = (int) (C_proj.x + (B_proj.x - C_proj.x) * (y - C_proj.y) / (B_proj.y - C_proj.y));
             xRBC = xLBC;
         }
 
         // calculate the left and right x coordinates of the triangle for the current y value
-        int xL = round(std::min({xLAB, xLAC, xLBC}) + 0.5);
-        int xR = round(std::max({xRAB, xRAC, xRBC}) - 0.5);
+        int xL = static_cast<int>(round(std::min({xLAB, xLAC, xLBC}) + 0.5));
+        int xR = static_cast<int>(round(std::max({xRAB, xRAC, xRBC}) - 0.5));
 
         for (int x = xL; x <= xR; ++x) {
             Vector3D u = B - A;
@@ -175,4 +173,5 @@ void ImageDrawer::draw_zbuf_triag(ZBuffer &zBuffer, img::EasyImage &image, const
             }
         }
     }
+
 }

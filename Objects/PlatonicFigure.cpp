@@ -1,4 +1,5 @@
 #include <numeric>
+#include <cmath>
 #include "PlatonicFigure.h"
 #include "../SharedFunctions/TriangulateFace.h"
 
@@ -266,9 +267,6 @@ int PlatonicFigure::calculateIndex(const int &i, const int &j, const int &m) {
 }
 
 Figure3D PlatonicFigure::createBuckyBall(const std::vector<double> &rotations, const double &scale, const Vector3D& center, img::Color color) {
-    // Creates a buckyball
-
-    // Points and faces with points of the resulting buckyball
     std::vector<Face3D> faces;
     std::vector<Vector3D> points;
 
@@ -277,7 +275,7 @@ Figure3D PlatonicFigure::createBuckyBall(const std::vector<double> &rotations, c
 
     // Split all faces in three triangles and one hexagon
     for (int i = 0; i < icosahedron.faces.size(); ++i) {
-        // Push new faces and points in faces and points vectors.
+
     }
 
     // Return Figure3D

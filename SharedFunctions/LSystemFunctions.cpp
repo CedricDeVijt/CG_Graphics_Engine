@@ -1,5 +1,6 @@
 #include <fstream>
 #include <stack>
+#include <cmath>
 #include "LSystemFunctions.h"
 
 LParser::LSystem3D LSystemFunctions::parseLSystem3D(const std::string &inputfile) {

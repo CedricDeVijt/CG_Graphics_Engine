@@ -1,5 +1,6 @@
 #include "ZBuffer.h"
 #include <limits>
+#include <cmath>
 
 ZBuffer::ZBuffer(const int width, const int height) {
     zBuffer = std::vector<std::vector<double>>(width, std::vector<double>(height, std::numeric_limits<double>::infinity()));
