@@ -266,7 +266,9 @@ int PlatonicFigure::calculateIndex(const int &i, const int &j, const int &m) {
     return i * m + j;
 }
 
-Figure3D PlatonicFigure::createBuckyBall(const std::vector<double> &rotations, const double &scale, const Vector3D& center, img::Color color) {
+Figure3D
+PlatonicFigure::createBuckyBall(const std::vector<double> &rotations, const double &scale, const Vector3D &center,
+                                img::Color color) {
     std::vector<Face3D> faces;
     std::vector<Vector3D> points;
 

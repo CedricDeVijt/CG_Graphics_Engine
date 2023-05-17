@@ -120,9 +120,9 @@ Figures3D FigureParser::parseWireframeFigure(const ini::Section &figure) {
     } else if (type == "FractalOctahedron") {
         Figure3D octahedron = PlatonicFigure::createOctahedron(rotations, scale, center, color);
         return FigureFractaliser::generateFractal(octahedron, nrIterations, fractalScale);
-    } else if (type == "FractalBuckyBall") {
-        Figure3D buckyBall = PlatonicFigure::createBuckyBall(rotations, scale, center, color);
-        return FigureFractaliser::generateFractal(buckyBall, nrIterations, fractalScale);
+//    } else if (type == "FractalBuckyBall") {
+//        Figure3D buckyBall = PlatonicFigure::createBuckyBall(rotations, scale, center, color);
+//        return FigureFractaliser::generateFractal(buckyBall, nrIterations, fractalScale);
     } else {
         return {};
     }
