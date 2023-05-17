@@ -5,6 +5,7 @@
 #include "Parsers/LSystem2DParser.h"
 #include "Parsers/ZBufferedWireframeParser.h"
 #include "Parsers/ZBufferParser.h"
+#include "Parsers/LightedZbuffering.h"
 
 #include <fstream>
 #include <iostream>
@@ -16,7 +17,7 @@ img::EasyImage generate_image(const ini::Configuration &configuration) {
 
     if (type == "2DLSystem") {
         return LSystem2DParser::parse2DLSystem(configuration);
-    } else if (type == "Wireframe" || type == "BuckyBall" || type == "MengerSponge") {
+    } else if (type == "Wireframe") {
         return WireframeParser::parseWireframe(configuration);
     } else if (type == "ZBufferedWireframe") {
         return ZBufferedWireframeParser::parseZBufferedWireframe(configuration);
