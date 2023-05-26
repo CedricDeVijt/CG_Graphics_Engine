@@ -60,7 +60,13 @@ set(engine_sources
 		SharedFunctions/LSystemFunctions.h
 		SharedFunctions/TriangulateFace.cpp
 		SharedFunctions/TriangulateFace.h
-        Parsers/ZBufferParser.cpp Parsers/ZBufferParser.h Objects/PlatonicFigure.cpp Objects/PlatonicFigure.h SharedFunctions/FigureFractaliser.cpp SharedFunctions/FigureFractaliser.h)
+        Parsers/ZBufferParser.cpp
+		Parsers/ZBufferParser.h
+		Objects/PlatonicFigure.cpp
+		Objects/PlatonicFigure.h
+		SharedFunctions/FigureFractaliser.cpp
+		SharedFunctions/FigureFractaliser.h
+		)
 
 ############################################################
 # Create an executable

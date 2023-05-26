@@ -265,27 +265,3 @@ Figure3D PlatonicFigure::createTorus(const std::vector<double> &rotations, const
 int PlatonicFigure::calculateIndex(const int &i, const int &j, const int &m) {
     return i * m + j;
 }
-
-Figure3D
-PlatonicFigure::createBuckyBall(const std::vector<double> &rotations, const double &scale, const Vector3D &center,
-                                img::Color color) {
-    std::vector<Face3D> faces;
-    std::vector<Vector3D> points;
-
-    // Buckyball uses icosahedron as base, each face is split up in three triangles and one hexagon
-    Figure3D icosahedron = createIcosahedron({0, 0, 0}, 1, Vector3D::vector(0, 0, 0), color);
-
-    // Split all faces in three triangles and one hexagon
-    for (int i = 0; i < icosahedron.faces.size(); ++i) {
-
-    }
-
-    // Return Figure3D
-    return {faces, points, rotations, scale, center, color};
-}
-
-Figure3D PlatonicFigure::createMengerSponge(const std::vector<double> &rotations, const double &scale, Vector3D center,
-                                            img::Color color) {
-    return {};
-}
-

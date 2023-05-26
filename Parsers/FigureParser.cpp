@@ -99,12 +99,6 @@ Figures3D FigureParser::parseWireframeFigure(const ini::Section &figure) {
     } else if (type == "Torus") {
         Figure3D newFigure = PlatonicFigure::createTorus(rotations, scale, center, color, R, r, n, m);
         return {newFigure};
-    } else if (type == "BuckyBall") {
-        Figure3D newFigure = PlatonicFigure::createBuckyBall(rotations, scale, center, color);
-        return {newFigure};
-    } else if (type == "MengerSponge") {
-        Figure3D mengerSponge = PlatonicFigure::createMengerSponge(rotations, scale, center, color);
-        return {mengerSponge};
     } else if (type == "FractalCube") {
         Figure3D cube = PlatonicFigure::createCube(rotations, scale, center, color);
         return FigureFractaliser::generateFractal(cube, nrIterations, fractalScale);
@@ -120,9 +114,6 @@ Figures3D FigureParser::parseWireframeFigure(const ini::Section &figure) {
     } else if (type == "FractalOctahedron") {
         Figure3D octahedron = PlatonicFigure::createOctahedron(rotations, scale, center, color);
         return FigureFractaliser::generateFractal(octahedron, nrIterations, fractalScale);
-//    } else if (type == "FractalBuckyBall") {
-//        Figure3D buckyBall = PlatonicFigure::createBuckyBall(rotations, scale, center, color);
-//        return FigureFractaliser::generateFractal(buckyBall, nrIterations, fractalScale);
     } else {
         return {};
     }
